@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view>
+	<h:head>
+		<h:outputStylesheet name="basic.css" library="css" />
+			
+		<title>
+		   <ui:insert name="title">
+				Cruzeirão
+			</ui:insert>
+	    </title>
+	</h:head>
+
+	<h:body>
+		<p:layout id="globalLayout" fullPage="true">
+			<p:layoutUnit position="north" size="70" styleClass="unit">				
+				<ui:include src="cabecalho.xhtml" />			
+			</p:layoutUnit>
+
+			<p:layoutUnit position="center" styleClass="principal">
+				<ui:insert name="principal" />
+			</p:layoutUnit>
+		</p:layout>
+	</h:body>
+</f:view>
+</h:html>
+
+

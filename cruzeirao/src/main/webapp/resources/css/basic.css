@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: white; 
+}
+
+.unit {
+	border: 0;
+    border-radius: 0; 
+    background-color: #f18136; 
+    border-left: 5px solid #ef6b14;
+}
+
+.cabecalho {  
+    background-color: #f18136;
+    height: 100%;
+    color: white;    
+}
+
+.principal {	
+	border: 0;
+    border-radius: 0;
+    padding: 0;
+    top: 69px !important;
+}
+
+.ui-layout-unit-content.ui-widget-content {
+	padding: 0;
+	overflow: hidden;
+}
+
+
+.logo {	
+	height: 70px;
+	margin-left: 2%;
+	margin-top: -5px;
+}
