@@ -35,3 +35,39 @@ body {
 	margin-left: 2%;
 	margin-top: -5px;
 }
+
+.buttonProvisorio {
+	position: fixed; 
+	bottom: 20px; 
+	height: 5vw; 
+	text-align: center; 
+	color: white; 
+	right: 20px; 
+	line-height: 5vw; 
+	width: 5vw;
+	border-radius: 100%; 
+	background-color: blue; 
+	font-size: 3vw; 
+}
+
+.ui-widget-content a {
+	color: white;
+	text-decoration: none;
+}
+
+.itemCard {
+	width: 30vw;
+    height: 50vh;
+    background-color: red;
+    float: left;
+    margin: 1vw;
+}
+
+.pageContent {
+	overflow: auto;
+    max-height: 100vh;
+}
+
+.createButton {
+	
+}
