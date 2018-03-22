@@ -3,30 +3,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	<h:panelGrid columns="12" width="100%" styleClass="cabecalho">		
-		<p:column colspan="4">
 		 	<p:graphicImage 
 			    library="images" 
 				name="logo.png"
 				alt="Cruzeirão" 
 				title="Cruzeirão" 
-				styleClass="logo"/>					
-		</p:column>
-		
-		<p:column colspan="2">
-			<p:link value="Campeonato" href="../campeonato/index.xhtml"></p:link>
-		</p:column>
-		
-		<p:column colspan="2">
-			<p:link value="Local" href="../local/index.xhtml"></p:link>
-		</p:column>		
-		
-		<p:column colspan="2">
-			<p:link value="Equipe" href="../equipe/index.xhtml"></p:link>
-		</p:column>
-		
-		<p:column colspan="2">
-			<p:link value="Inscricao" href="../inscricao/index.xhtml"></p:link>
-		</p:column>      
-	</h:panelGrid>
+				styleClass="logo"/>	
+				
+			<p:link class="cabecalhoLink" value="Campeonato" href="../campeonato/index.xhtml"></p:link>	
+			<p:link class="cabecalhoLink" value="Local" href="../local/index.xhtml"></p:link>
+			<p:link class="cabecalhoLink" value="Equipe" href="../equipe/index.xhtml"></p:link>
+			<p:link class="cabecalhoLink" value="Inscricao" href="../inscricao/index.xhtml"></p:link>
 </ui:composition>
