@@ -2,17 +2,18 @@
 
 body {
 	background-color: white; 
+	overflow: auto;
+	max-height: 100%;
 }
 
 .unit {
 	border: 0;
     border-radius: 0; 
-    background-color: #f18136; 
-    border-left: 5px solid #ef6b14;
+    background-color: #3a3939; 
 }
 
 .cabecalho {  
-    background-color: #f18136;
+    background-color: #3a3939;
     height: 100%;
     color: white;    
 }
@@ -27,27 +28,43 @@ body {
 .ui-layout-unit-content.ui-widget-content {
 	padding: 0;
 	overflow: hidden;
+	background-color: transparent;
 }
 
 
 .logo {	
-	height: 70px;
-	margin-left: 2%;
-	margin-top: -5px;
+	height: 50px;
+    margin-left: 2%;
+    margin-top: -5px;
+    float: left;
+    border-top: 10px solid #375d5d;
+    padding: 50px;
+    padding-top: 10px;
 }
 
 .buttonProvisorio {
+	position: fixed;
+    bottom: 0;
+    height: 50px;
+    text-align: center;
+    color: white;
+    right: 20px;
+    line-height: 50px;
+    width: 40vw;
+    background-color: steelblue;
+    border-top-left-radius: 20px;
+    font-size: 3vh;
+    border-top-right-radius: 20px;
+    z-index: 10;
+}
+
+.buttonProvisorioLine {
+	height: 10px; 
+	width: 100vw; 
+	background-color: steelblue; 
 	position: fixed; 
-	bottom: 20px; 
-	height: 5vw; 
-	text-align: center; 
-	color: white; 
-	right: 20px; 
-	line-height: 5vw; 
-	width: 5vw;
-	border-radius: 100%; 
-	background-color: blue; 
-	font-size: 3vw; 
+	bottom: 0; 
+	z-index: 1;
 }
 
 .ui-widget-content a {
@@ -56,18 +73,76 @@ body {
 }
 
 .itemCard {
-	width: 30vw;
-    height: 50vh;
-    background-color: red;
-    float: left;
-    margin: 1vw;
+	width: 90vw;
+    height: 100%;
+    background-color: #eee;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px lightgrey;
 }
 
 .pageContent {
 	overflow: auto;
-    max-height: 100vh;
+	max-height: 100%;
 }
 
-.createButton {
-	
+a.ui-link.ui-widget.cabecalhoLink {
+	float: right;
+    margin-right: 10px;
+    background-color: #2f4f4f;
+    border-top: 10px solid #375d5d;
+    padding: 20px;
+    padding-top: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 14px;
+}
+
+.contentTitle {
+    width: 100vw;
+    color: white;
+    text-align: center;
+    box-shadow: 5px 5px 5px lightgrey;
+    padding: 5px;
+    background-color: #3a3939;
+}
+
+.rodape {
+	width: 100vw;
+    height: 100px;
+    background-color: darkslategray;
+}
+
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnDelete {
+	float: right;
+	background-color: white;
+    color: indianred;
+    font-size: 25px;
+}
+
+.ui-button .ui-button-text {
+	line-height: 45px;
+}
+
+.cardTitle {
+	background-color: indianred;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 5%;
+}
+
+.cardInfo {
+	margin-left: 5%;
+    border: 1px solid lightgray;
+    padding-left: 2%;
+    margin-bottom: 20px;	
+}
+
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnView {
+	background-color: white;
+    float: right;
+    margin: 10px;
+    color: cadetblue;
 }
