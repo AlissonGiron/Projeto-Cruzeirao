@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Fase {
 	private Date dataInicio, dataFim;
-	private Enum formato;
+	private Enum<Formato> formato;
 	private Categoria categoria;
 	private int numeroFase;
 	private List<Grupo> grupos = new ArrayList<Grupo>();
@@ -23,10 +23,10 @@ public class Fase {
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
-	public Enum getFormato() {
+	public Enum<Formato> getFormato() {
 		return formato;
 	}
-	public void setFormato(Enum formato) {
+	public void setFormato(Enum<Formato> formato) {
 		this.formato = formato;
 	}
 	public Categoria getCategoria() {
