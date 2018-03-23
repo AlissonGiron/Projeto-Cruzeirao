@@ -74,7 +74,7 @@ body {
 
 .itemCard {
 	width: 90vw;
-    height: 50vh;
+    height: 100%;
     background-color: #eee;
     margin: 20px auto;
     border-radius: 20px;
@@ -111,4 +111,38 @@ a.ui-link.ui-widget.cabecalhoLink {
 	width: 100vw;
     height: 100px;
     background-color: darkslategray;
+}
+
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnDelete {
+	float: right;
+	background-color: white;
+    color: indianred;
+    font-size: 25px;
+}
+
+.ui-button .ui-button-text {
+	line-height: 45px;
+}
+
+.cardTitle {
+	background-color: indianred;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 5%;
+}
+
+.cardInfo {
+	margin-left: 5%;
+    border: 1px solid lightgray;
+    padding-left: 2%;
+    margin-bottom: 20px;	
+}
+
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnView {
+	background-color: white;
+    float: right;
+    margin: 10px;
+    color: cadetblue;
 }
