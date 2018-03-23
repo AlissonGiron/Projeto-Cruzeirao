@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"   
+   xmlns:h = "http://java.sun.com/jsf/html"
+   xmlns:f = "http://java.sun.com/jsf/core"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:composite = "http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+		<composite:attribute name="label"/>
+		<composite:attribute name="value"/>
+		<!-- Possible types: date, time, datetime -->
+		<composite:attribute name="type"/>
+	</composite:interface>
+
+	<composite:implementation>
+		<p:outputLabel value="#{cc.attrs.label}"/>
+		
+		<p:calendar rendered="#{cc.attrs.type eq 'datetime'}" value="#{cc.attrs.value}" pattern="dd/MM/yyyy HH:mm:ss" showOn="button" mask="true"/>
+		<p:calendar rendered="#{cc.attrs.type eq 'date'}" value="#{cc.attrs.value}" pattern="dd/MM/yyyy" showOn="button" mask="true"/>
+		<p:calendar rendered="#{cc.attrs.type eq 'time'}" value="#{cc.attrs.value}" pattern="HH:mm:ss" showOn="button" mask="true" timeOnly="true"/>
+		<br/>
+	</composite:implementation>
+</html>

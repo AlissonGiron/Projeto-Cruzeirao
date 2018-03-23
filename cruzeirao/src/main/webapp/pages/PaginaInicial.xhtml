@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3c.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3c.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:components="http://java.sun.com/jsf/composite/components">
  <h:head>
  	<h:outputStylesheet name="paginainicial.css" library="css" />
  </h:head>
@@ -42,6 +42,11 @@
  	</div>
  	
  	<div id="cont02" style="width: 100vw; height: 100vh; background: white;">
+ 		<components:textInput label="Label Teste" value="Valor" placeholder="digite um valor..."/>
+ 		<components:passwordInput label="Senha: " placeholder="Digite sua senha..."/>
+ 		<components:dateTimeInput label="Data: " type="date"/>
+ 		<components:dateTimeInput label="Hora: " type="time"/>
+ 		<components:dateTimeInput label="DataHora: " type="datetime"/>
  	</div>
  	
  	<div id="contatosBackground"></div>

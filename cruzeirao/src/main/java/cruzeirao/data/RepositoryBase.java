@@ -6,7 +6,6 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 
 /**
- * 
  * @author Gabriel Belchior
  * Abstrai a lógica de persistência de dados do resto do código da aplicação.
  * @param <T> Tipo da entidade a ser gerenciada por este repositório
