@@ -1,5 +1,7 @@
 package cruzeirao.models;
 
+import cruzeirao.data.enums.TipoJuiz;
+
 public class Juiz extends Usuario {
 	private Enum<TipoJuiz> tipo;
 

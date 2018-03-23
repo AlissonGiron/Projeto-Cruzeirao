@@ -2,6 +2,9 @@ package cruzeirao.models;
 
 import java.util.Date;
 
+import cruzeirao.data.enums.Documento;
+import cruzeirao.data.enums.Sexo;
+
 public abstract class Usuario {
 	private String nome;
 	private Date dataNascimento;

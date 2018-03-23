@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import cruzeirao.data.enums.Formato;
+
 public class Fase {
 	private Date dataInicio, dataFim;
 	private Enum<Formato> formato;

@@ -2,6 +2,8 @@ package cruzeirao.models;
 
 import java.sql.Time;
 
+import cruzeirao.data.enums.TipoCartao;
+
 public class Cartao {
 	private Jogador jogador;
 	private Enum<TipoCartao> tipo;

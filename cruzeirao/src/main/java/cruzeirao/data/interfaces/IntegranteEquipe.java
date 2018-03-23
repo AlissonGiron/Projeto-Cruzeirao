@@ -1,6 +1,8 @@
-package cruzeirao.models;
+package cruzeirao.data.interfaces;
 
 import java.util.List;
+
+import cruzeirao.models.Inscrito;
 
 public interface IntegranteEquipe {
 	

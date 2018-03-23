@@ -3,6 +3,8 @@ package cruzeirao.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import cruzeirao.data.enums.Sexo;
+
 public class Categoria {
 	private String nome;
 	private int nascidosAte, minJogadores, maxJogadores;
