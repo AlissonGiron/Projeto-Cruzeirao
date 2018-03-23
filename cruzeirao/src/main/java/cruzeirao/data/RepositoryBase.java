@@ -1,5 +1,7 @@
 package cruzeirao.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
@@ -29,8 +31,17 @@ public abstract class RepositoryBase<T> implements AutoCloseable {
 	 * @param id Chave primária da entidade a ser pesquisada
 	 * @return Entidade encontrada, ou null.
 	 */
-	public T find(Object id) {
-		return find(id, false);
+	public T get(Object id) {
+		return get(id, false);
+	}
+	
+	/**
+	 * Busca entidades no banco com base em uma Query
+	 * @param query Query para buscar os dados
+	 * @return Lista contendo as entidades encontradas
+	 */
+	public List<T> find(String query) {
+		return _entityManager.createQuery(query).getResultList();
 	}
 	
 	/**
@@ -39,7 +50,7 @@ public abstract class RepositoryBase<T> implements AutoCloseable {
 	 * @param enableLazyLoad
 	 * @return Entidade encontrada, ou null.
 	 */
-	public T find(Object id, Boolean enableLazyLoad) {
+	public T get(Object id, Boolean enableLazyLoad) {
 		T result = null;
 		
 		if (enableLazyLoad) {
