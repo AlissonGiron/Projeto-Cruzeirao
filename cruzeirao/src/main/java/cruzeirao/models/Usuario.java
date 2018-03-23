@@ -7,7 +7,7 @@ import cruzeirao.data.enums.Sexo;
 
 public abstract class Usuario {
 	private String nome;
-	private Date dataNascimento;
+	private Date dataNascimento = new Date();
 	private Enum<Documento> tipoDocumento;
 	private String documento;
 	private String email;
@@ -21,7 +21,7 @@ public abstract class Usuario {
 		return nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.trim();
 	}
 	public Date getDataNascimento() {
 		return dataNascimento;
@@ -39,31 +39,31 @@ public abstract class Usuario {
 		return documento;
 	}
 	public void setDocumento(String documento) {
-		this.documento = documento;
+		this.documento = documento.trim();
 	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = email.trim();
 	}
 	public String getTelefoneFixo() {
 		return telefoneFixo;
 	}
 	public void setTelefoneFixo(String telefoneFixo) {
-		this.telefoneFixo = telefoneFixo;
+		this.telefoneFixo = telefoneFixo.trim();
 	}
 	public String getTelefoneMovel() {
 		return telefoneMovel;
 	}
 	public void setTelefoneMovel(String telefoneMovel) {
-		this.telefoneMovel = telefoneMovel;
+		this.telefoneMovel = telefoneMovel.trim();
 	}
 	public String getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		this.endereco = endereco.trim();
 	}
 	public Enum<Sexo> getSexo() {
 		return sexo;

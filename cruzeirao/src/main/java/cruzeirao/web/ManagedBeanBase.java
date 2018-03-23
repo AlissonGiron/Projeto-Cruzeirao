@@ -11,18 +11,24 @@ public abstract class ManagedBeanBase<T> {
 	
     private Class<T> tipoClasse;
     private T tipo;
-	private CoreBase coreBase = new CoreBase();
+	private CoreBase<T> coreBase;
 	
     public ManagedBeanBase(Class<T> tipoClasse){
         this.tipoClasse = tipoClasse;
+        
+        coreBase = new CoreBase<T>(tipoClasse, );
     }
 
 	public void salvar()
 	{
+		if(!isValid()) return;
+		
 		coreBase.salvar(tipo);
 		tipo = tipoClasse.newInstance();
 	}
 
+	public abstract boolean isValid();
+	
 	public T get() {
 		return tipo;
 	}
