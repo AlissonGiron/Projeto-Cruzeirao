@@ -1,10 +1,21 @@
 package cruzeirao.models;
 
-import cruzeirao.data.enums.Documento;
+import java.util.ArrayList;
 
-public class PreparadorFisico extends Usuario {
+import cruzeirao.data.enums.Documento;
+import cruzeirao.data.interfaces.IntegranteEquipe;
+
+public class PreparadorFisico extends Usuario implements IntegranteEquipe {
+	private ArrayList<Inscrito> inscricoes;
 
 	public PreparadorFisico() {
 		this.setTipoDocumento(Documento.CREF);
+	}
+	
+	public ArrayList<Inscrito> getInscricoes() {
+		return inscricoes;
+	}
+	public void setInscricoes(ArrayList<Inscrito> inscricoes) {
+		this.inscricoes = inscricoes;
 	}
 }
