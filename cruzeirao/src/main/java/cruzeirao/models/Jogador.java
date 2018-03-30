@@ -1,5 +1,15 @@
 package cruzeirao.models;
 
-public class Jogador extends Usuario {
+import java.util.ArrayList;
+import cruzeirao.data.interfaces.IntegranteEquipe;
 
+public class Jogador extends Usuario implements IntegranteEquipe {
+	private ArrayList<Inscrito> inscricoes;
+
+	public ArrayList<Inscrito> getInscricoes() {
+		return inscricoes;
+	}
+	public void setInscricoes(ArrayList<Inscrito> inscricoes) {
+		this.inscricoes = inscricoes;
+	}
 }
