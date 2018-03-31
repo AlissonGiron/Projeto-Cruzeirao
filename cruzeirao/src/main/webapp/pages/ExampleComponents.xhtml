@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
+	<h:head>
+		<style type="text/css">
+			.display {
+				margin: 25px 0 25px 0;
+				padding: 5px;
+				border: 1px solid lightgrey;
+				border-radius: 6px;
+			}
+		</style>
+	</h:head>
+	<h:body>
+		<div class="display">
+			<comp:booleanInput label="Valor booleano: " trueLabel="Sim" falseLabel="Na&#771;o" value="false"/>
+		</div>
+		<div class="display">
+			<comp:dateTimeInput label="Data: " value="#{exampleComponentsMB.dateAsDate}" type="date"/>
+			<comp:dateTimeInput label="Hora: " value="#{exampleComponentsMB.dateTimeAsDate}" type="time"/>
+			<comp:dateTimeInput label="Data e Hora: " value="#{exampleComponentsMB.dateTimeAsDate}" type="datetime"/>
+		</div>
+		<div class="display">
+			<comp:numericInput label="Nu&#769;mero: "/>
+			<comp:numericInput label="Valor inicial: " value="3.5"/>
+			<comp:numericInput label="Step: " step="0.25"/>
+			<comp:numericInput label="Mi&#769;nimo e Ma&#769;ximo: " min="0" max="10"/>
+			<comp:numericInput label="Prefixo: " prefix="R$ "/>
+		</div>
+		<div class="display">
+			<comp:passwordInput label="Senha: " placeholder="Digite uma senha..."/>
+		</div>
+		<div class="display">
+			<comp:textInput label="Texto: " placeholder="Digite alguma coisa..."/>
+			<comp:textInput label="Texto com valor: " value="texto" placeholder="Digite alguma coisa..."/>
+		</div>
+		<div class="display">
+			<comp:comboBoxInput label="ComboBox: " items="#{exampleComponentsMB.comboBoxItems}" displayDefaultItem="true" defaultItemLabel="Selecione um item..."/>
+			<comp:comboBoxInput label="ComboBox com item selecionado: " items="#{exampleComponentsMB.comboBoxItems}" selectedItem="#{exampleComponentsMB.comboBoxSelectedItem}"/>
+		</div>
+	</h:body>
+</html>

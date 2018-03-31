@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"   
+   xmlns:h = "http://java.sun.com/jsf/html"
+   xmlns:f = "http://java.sun.com/jsf/core"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:composite = "http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+		<composite:attribute name="label"/>
+		<composite:attribute name="value" default="0"/>
+		<composite:attribute name="step" default="1"/>
+		<composite:attribute name="min" default="-2147483648"/>
+		<composite:attribute name="max" default="2147483648"/>
+		<composite:attribute name="prefix" default=""/>
+	</composite:interface>
+
+	<composite:implementation>
+		<p:outputLabel value="#{cc.attrs.label}"/>
+		<p:spinner value="#{cc.attrs.value}" stepFactor="#{cc.attrs.step}" min="#{cc.attrs.min}" max="#{cc.attrs.max}" prefix="#{cc.attrs.prefix}"/>
+		<br/>
+	</composite:implementation>
+</html>
