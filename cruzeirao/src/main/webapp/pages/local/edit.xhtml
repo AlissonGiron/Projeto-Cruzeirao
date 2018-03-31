@@ -12,14 +12,16 @@
 
 	<ui:define name="principal">
 		
-		<div class="contentTitle"> Novo Local </div>
+		<div class="contentTitle"> Local </div>
 		
 		<div class="pageContent">
 			<br/>
 			<div class="itemCard">
-				<div class="cardTitle cardCategoria"></div>
+				<div class="cardTitle cardCategoria">
+				</div>
 				
-				<p:panelGrid style="margin: 20px auto;" columns="2">
+				<p:panelGrid style="margin: 20px auto;" columns="2">					
+					
 					<p:outputLabel>Nome do Local:</p:outputLabel> 
 					<p:inputText></p:inputText>
 					
@@ -39,10 +41,13 @@
 					<p:inputText></p:inputText>
 						
 				</p:panelGrid>
-			 </div>				
+			 </div>	
+			
 		   	
 		   	<a href="index.xhtml" class="buttonProvisorio">Salvar</a>
-		   	<div class="buttonProvisorioLine"></div>
+		   	<div class="buttonProvisorioLine"></div>		   	
+		   	       	
+       	
 		</div>
 	</ui:define>
 

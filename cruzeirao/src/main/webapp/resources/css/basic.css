@@ -110,13 +110,12 @@ a.ui-link.ui-widget.cabecalhoLink {
 .rodape {
 	width: 100vw;
     height: 100px;
-    background-color: darkslategray;
+    background-color: white;
 }
 
 .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnDelete {
 	float: right;
 	background-color: white;
-    color: indianred;
     font-size: 25px;
 }
 
@@ -125,12 +124,27 @@ a.ui-link.ui-widget.cabecalhoLink {
 }
 
 .cardTitle {
-	background-color: indianred;
     color: white;
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
     padding-left: 5%;
+}
+
+.cardTitle.cardCampeonato {
+	background-color: indianred;
+}
+
+.cardTitle.cardCampeonato > .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnDelete {
+	color: indianred;
+}
+
+.cardTitle.cardCategoria {
+	background-color: lightgreen;
+}
+
+.cardTitle.cardCategoria > .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnDelete {
+	color: lightgreen;
 }
 
 .cardInfo {
@@ -146,3 +160,55 @@ a.ui-link.ui-widget.cabecalhoLink {
     margin: 10px;
     color: cadetblue;
 }
+
+.pageTitle {
+	height: 100px;
+   	width: 100vw;
+   	background-color: indianred;
+   	color: white;
+   	padding: 20px;
+   	line-height: 100px;
+   	font-size: 30px;
+   	padding-left: 50px;
+}
+
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnVoltar {
+	background: transparent;
+    border: 1px solid lightgray;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border-bottom-left-radius: 0;
+    font-size: 23px !important;
+}
+
+.listSection
+{
+	width: 90%;
+	margin-left: 5%;
+	height: 200px;
+}
+
+.listCard
+{
+	width: 30%; 
+	margin-left: 3%; 
+	height: 200px; 
+	float: left;
+	color: white;
+	font-size: 30px;
+	font-stretch:condensed;
+	border: 1px solid grey;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 200px;
+}
+
+
+tr.ui-widget-content
+{
+	background-color: transparent;
+	border: 1px solid transparent;
+}
+

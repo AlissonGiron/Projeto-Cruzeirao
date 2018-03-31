@@ -17,24 +17,31 @@ public class Categoria {
 	public String getNome() {
 		return nome;
 	}
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 	public int getNascidosAte() {
 		return nascidosAte;
 	}
+	
 	public void setNascidosAte(int nascidosAte) {
 		this.nascidosAte = nascidosAte;
 	}
+	
 	public int getMinJogadores() {
 		return minJogadores;
 	}
+	
 	public void setMinJogadores(int minJogadores) {
 		this.minJogadores = minJogadores;
 	}
+	
 	public int getMaxJogadores() {
 		return maxJogadores;
 	}
+	
 	public void setMaxJogadores(int maxJogadores) {
 		this.maxJogadores = maxJogadores;
 	}

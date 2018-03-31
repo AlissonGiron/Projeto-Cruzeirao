@@ -11,6 +11,35 @@
 	</ui:define>
 
 	<ui:define name="principal">
-	     <p:outputLabel value="Equipe"/>      	
-	</ui:define>	
+		
+		<div class="contentTitle"> Minhas Equipes </div>
+		
+		<div class="pageContent">
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCampeonato">
+					<p:button styleClass="btnDelete" value="X"></p:button>					
+					<p>EC São Bento</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+						<p>Cidade: Sorocaba</p>					
+						<p>Data de Fundação: 14 de setembro de 1913</p>
+					</div>
+					<p:button styleClass="btnView" value="Editar" href="edit.xhtml"></p:button>
+				</div>
+			</div>
+			<br/>				   
+			   
+		   	<a href="create.xhtml" class="buttonProvisorio">Adicionar Equipe</a>
+		   	<div class="buttonProvisorioLine"></div>
+		   	
+		   	
+		   	<div class="rodape"></div>	
+       	
+		</div>
+	</ui:define>
+
+	
 </ui:composition>

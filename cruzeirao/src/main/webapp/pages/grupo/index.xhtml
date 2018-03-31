@@ -1,10 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<ui:composition template="../comuns/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	
+	<ui:define name="title">
+		<h:outputText value="Categoria" />
+	</ui:define>
 
-</body>
-</html>
+	<ui:define name="principal">
+		
+		<div class="contentTitle" style="background-color:'lightgreen'"> Grupos </div>
+		
+		<div class="pageContent">
+			<div class="pageTitle">
+			    <p:button styleClass="btnVoltar" value="Voltar" href="../campeonato/edit.xhtml"></p:button>
+				Senior				
+			</div>
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<p:button styleClass="btnDelete" value="X"></p:button>			
+					<p>Júnior</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+						<p></p>
+					</div>
+					<p:button styleClass="btnView" value="Visualizar"></p:button>
+				</div>
+			</div>  
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<p:button styleClass="btnDelete" value="X"></p:button>				
+					<p>Profissional</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+						<p>Período de Inscrições: 20/02/2018 a 20/03/2018</p>					
+						<p>Período de Realização: 10/05/2018 a 25/11/2018</p>
+					</div>
+					<p:button styleClass="btnView" value="Visualizar"></p:button>
+				</div>
+			</div>  
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<p:button styleClass="btnDelete" value="X"></p:button>				
+					<p>Senior</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+						<p>Período de Inscrições: 20/02/2018 a 20/03/2018</p>					
+						<p>Período de Realização: 10/05/2018 a 25/11/2018</p>
+					</div>
+					<p:button styleClass="btnView" value="Visualizar"></p:button>
+				</div>
+			</div>  
+			<br/>	
+						   
+			   
+		   	<a href="create.xhtml" class="buttonProvisorio">Adicionar Categoria</a>
+		   	<div class="buttonProvisorioLine"></div>
+		   	
+		   	
+		   	<div class="rodape"></div>	
+       	
+		</div>
+	</ui:define>
+
+	
+</ui:composition>

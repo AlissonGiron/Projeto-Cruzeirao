@@ -12,7 +12,7 @@
 
 	<ui:define name="principal">
 		
-		<div class="contentTitle"> Novo Campeonato </div>
+		<div class="contentTitle"> Campeonato </div>
 		
 		<div class="pageContent">
 			<br/>
@@ -32,31 +32,48 @@
 					<p:calendar></p:calendar>	
 					
 					<p:outputLabel>Início do Campeonato:</p:outputLabel> 
-					<p:calendar></p:calendar>	
+					<p:calendar></p:calendar>
 					
 					<p:outputLabel>Término do Campeonato:</p:outputLabel> 
 					<p:calendar></p:calendar>
 					
 					<p:outputLabel>Valor da Taxa:</p:outputLabel> 
-					<p:inputText></p:inputText>
-						
-				</p:panelGrid>
-			 </div>	
+					<p:inputText></p:inputText>						
+				</p:panelGrid>		
+			</div>
 			
-			<br></br>			
+			<br></br>
 			
 			<div class="listSection">
-				<div style="border: 1px solid grey; border-radius: 20px; padding: 20px; text-align: center;">
-					Para adicionar Categorias, juízes e locais para um campeonato, primeiramente salve os dados básicos.
+				<div class="listCard" style="background-color: cadetblue;">
+					Juízes
+				</div>
+				
+				<a href="../categoria/index.xhtml" class="listCard" style="background-color: lightgreen;">
+					Categorias
+				</a>
+				
+				<div class="listCard" style="background-color: navy;">
+					Locais
 				</div>
 			</div>
 			
-		   	<a href="edit.xhtml" class="buttonProvisorio">Salvar</a>
+			  
+			<br/>		   	
+		   	
+		   	<a href="index.xhtml" class="buttonProvisorio">Salvar</a>
 		   	<div class="buttonProvisorioLine"></div>		   	
-		   	      	
+		   	
+		   	<div class="rodape"></div>	
+       	
        	
 		</div>
 	</ui:define>
 
 	
 </ui:composition>
+
+
+
+
+
