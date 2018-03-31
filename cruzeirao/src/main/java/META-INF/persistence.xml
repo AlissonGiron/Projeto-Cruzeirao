@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="cruzeirao" transaction-type="RESOURCE_LOCAL">
+		
+		<class>cruzeirao.models.Usuario</class>
+		<class>cruzeirao.models.Auxiliar</class>
+		<class>cruzeirao.models.Diretor</class>
+		<class>cruzeirao.models.Jogador</class>
+		<class>cruzeirao.models.Juiz</class>
+		<class>cruzeirao.models.Massagista</class>
+		<class>cruzeirao.models.Organizador</class>
+		<class>cruzeirao.models.PreparadorFisico</class>
+		<class>cruzeirao.models.Tecnico</class>
+		<class>cruzeirao.models.Torcedor</class>
+		<class>cruzeirao.models.Inscrito</class>
+		<class>cruzeirao.data.converters.SexoConverter</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/CruzeiraoDB;create=true"/>
 			<property name="javax.persistence.jdbc.user" value="user"/>

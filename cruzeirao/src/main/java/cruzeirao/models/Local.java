@@ -1,7 +1,12 @@
 package cruzeirao.models;
 
 public class Local {
-	private String nome, endereco, bairro, cidade, CEP, telefone;
+	private String nome;
+	private String endereco;
+	private String bairro;
+	private String cidade;
+	private String CEP;
+	private String telefone;
 	private int numero;
 	
 	public String getNome() {

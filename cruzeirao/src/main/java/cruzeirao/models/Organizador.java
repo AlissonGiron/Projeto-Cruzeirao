@@ -3,9 +3,22 @@ package cruzeirao.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Organizador extends Usuario {
-	private List<Campeonato> campeonatos = new ArrayList<Campeonato>();
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="ORGANIZADOR")
+@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
+public class Organizador extends Usuario {
+	
+	@OneToMany
+	@Column(name="CAMPEONATOS", nullable=true)
+	private List<Campeonato> campeonatos = new ArrayList<Campeonato>();
+	
+	// GETS AND SETS
 	public List<Campeonato> getCampeonatos() {
 		return campeonatos;
 	}

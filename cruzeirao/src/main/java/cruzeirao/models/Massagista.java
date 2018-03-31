@@ -1,16 +1,27 @@
 package cruzeirao.models;
 
 import java.util.ArrayList;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 import cruzeirao.data.interfaces.IntegranteEquipe;
 
+@Entity
+@Table(name="MASSAGISTA")
+@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Massagista extends Usuario implements IntegranteEquipe {
-	private ArrayList<Inscrito> inscricoes;
+	
+	@OneToMany
+	@Column(name="INSCRICAO_EM_CAMPEONATOS", nullable=true)
+	private ArrayList<Inscrito> inscricaoEmCampeonatos;
 
-	public ArrayList<Inscrito> getInscricoes() {
-		return inscricoes;
+	// GETS AND SETS
+	public ArrayList<Inscrito> getInscricaoEmCampeonatos() {
+		return inscricaoEmCampeonatos;
 	}
-	public void setInscricoes(ArrayList<Inscrito> inscricoes) {
-		this.inscricoes = inscricoes;
+	public void setInscricaoEmCampeonatos(ArrayList<Inscrito> inscricoes) {
+		this.inscricaoEmCampeonatos = inscricoes;
 	}
 }
