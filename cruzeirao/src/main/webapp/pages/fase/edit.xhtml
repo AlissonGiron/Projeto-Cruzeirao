@@ -7,12 +7,12 @@
 	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
 	
 	<ui:define name="title">
-		<h:outputText value="Categoria" />
+		<h:outputText value="Fase" />
 	</ui:define>
 
 	<ui:define name="principal">
 		
-		<div class="contentTitle"> Nova Categoria </div>
+		<div class="contentTitle"> Fase </div>
 		
 		<div class="pageContent">
 			<br/>
@@ -22,42 +22,45 @@
 				
 				<p:panelGrid style="margin: 20px auto;" columns="2">					
 					
-					<p:outputLabel>Nome da Categoria:</p:outputLabel> 
-					<p:inputText></p:inputText>
-					
-					<p:outputLabel>Nascidos Até:</p:outputLabel> 
-					<p:calendar></p:calendar>	
-					
-					<p:outputLabel>Qtd. Minima Jogadores:</p:outputLabel> 
-					<p:calendar></p:calendar>	
-					
-					<p:outputLabel>Qtd. Máx Jogadores:</p:outputLabel> 
-					<p:calendar></p:calendar>	
-					
-					<p:outputLabel>Sexo: </p:outputLabel> 
+					<p:outputLabel>Número da Fase: </p:outputLabel> 
 					<p:calendar></p:calendar>
+										
+					<p:outputLabel>Data de Início:</p:outputLabel> 
+					<p:calendar></p:calendar>	
 					
-					<p:outputLabel>Inscrições Habilitadas:</p:outputLabel> 
-					<p:inputText></p:inputText>
+					<p:outputLabel>Data de Fim:</p:outputLabel> 
+					<p:calendar></p:calendar>	
+					
+					<p:outputLabel>Formato:</p:outputLabel> 
+					<p:calendar></p:calendar>	
 						
 				</p:panelGrid>
 			 </div>	
 			
-			<br></br>			
+			<br></br>
 			
 			<div class="listSection">
 				<div style="border: 1px solid grey; border-radius: 20px; padding: 20px; text-align: center;">
-					Para adicionar Fases para uma categoria, primeiramente salve os dados básicos.
+					Só é possível adicionar Grupos à uma fase através do Gerenciador de Campeonatos, após o término do período de inscrições do campeonato
 				</div>
-			</div>
+			</div>	
+			  		
 			  
+			<br/>		   	
 		   	
-		   	<a href="edit.xhtml" class="buttonProvisorio">Salvar</a>
+		   	<a href="index.xhtml" class="buttonProvisorio">Salvar</a>
 		   	<div class="buttonProvisorioLine"></div>		   	
-		   	       	
+		   	
+		   	<div class="rodape"></div>	
+       	
        	
 		</div>
 	</ui:define>
 
 	
 </ui:composition>
+
+
+
+
+

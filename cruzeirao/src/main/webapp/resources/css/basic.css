@@ -110,7 +110,7 @@ a.ui-link.ui-widget.cabecalhoLink {
 .rodape {
 	width: 100vw;
     height: 100px;
-    background-color: darkslategray;
+    background-color: white;
 }
 
 .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnDelete {
@@ -172,7 +172,7 @@ a.ui-link.ui-widget.cabecalhoLink {
    	padding-left: 50px;
 }
 
-.btnVoltar {
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.btnVoltar {
 	background: transparent;
     border: 1px solid lightgray;
     color: white;
@@ -182,3 +182,33 @@ a.ui-link.ui-widget.cabecalhoLink {
     border-bottom-left-radius: 0;
     font-size: 23px !important;
 }
+
+.listSection
+{
+	width: 90%;
+	margin-left: 5%;
+	height: 200px;
+}
+
+.listCard
+{
+	width: 30%; 
+	margin-left: 3%; 
+	height: 200px; 
+	float: left;
+	color: white;
+	font-size: 30px;
+	font-stretch:condensed;
+	border: 1px solid grey;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 200px;
+}
+
+
+tr.ui-widget-content
+{
+	background-color: transparent;
+	border: 1px solid transparent;
+}
+

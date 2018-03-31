@@ -11,6 +11,7 @@ public class Campeonato {
 	private List<Categoria> categorias = new ArrayList<Categoria>();
 	private Date dataInicioInscricao, dataFimInscricao, dataInicioCampeonato, dataFimCampeonato;
 	private double valorTaxa;
+	
 	public String getNome() {
 		return nome;
 	}
