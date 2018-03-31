@@ -1,6 +1,8 @@
 package cruzeirao.models;
 
 import java.util.ArrayList;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -10,6 +12,7 @@ import cruzeirao.data.enums.TipoDocumento;
 import cruzeirao.data.interfaces.IntegranteEquipe;
 
 @Entity
+@Access(AccessType.PROPERTY)
 @Table(name="PREPARADOR_FISICO")
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class PreparadorFisico extends Usuario implements IntegranteEquipe {

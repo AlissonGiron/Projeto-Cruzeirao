@@ -2,6 +2,8 @@ package cruzeirao.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -9,6 +11,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
+@Access(AccessType.PROPERTY)
 @Table(name="DIRETOR")
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Diretor extends Usuario {

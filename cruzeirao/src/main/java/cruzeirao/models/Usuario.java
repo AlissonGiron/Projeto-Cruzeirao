@@ -1,6 +1,8 @@
 package cruzeirao.models;
 
 import java.util.Date;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -18,6 +20,7 @@ import cruzeirao.data.enums.TipoDocumento;
 import cruzeirao.data.enums.Sexo;
 
 @Entity
+@Access(AccessType.PROPERTY)
 @Table(name="USUARIO")
 @Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Usuario {

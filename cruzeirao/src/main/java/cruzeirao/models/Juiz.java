@@ -1,5 +1,7 @@
 package cruzeirao.models;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +11,7 @@ import javax.persistence.Table;
 import cruzeirao.data.enums.TipoJuiz;
 
 @Entity
+@Access(AccessType.PROPERTY)
 @Table(name="JUIZ")
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Juiz extends Usuario {
