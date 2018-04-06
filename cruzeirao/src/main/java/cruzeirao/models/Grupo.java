@@ -2,30 +2,32 @@ package cruzeirao.models;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="GRUPO")
-@PrimaryKeyJoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
 public class Grupo {
-	@OneToMany
-	@Column(name="EQUIPES", nullable=true)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
+	private int id;
+
+	@Column(name="NOME", nullable=false)
 	private String nome;
 	
-	@OneToMany
-	@Column(name="FASE", nullable=true)
+	@Column(name="FASE", nullable=false)
 	private Fase fase;
 	
-	@OneToMany
-	@Column(name="NUMERO_EQUIPES", nullable=true)
+	@Column(name="NUMERO_EQUIPES", nullable=false)
 	private int numeroEquipes;
 	
 	@OneToMany
@@ -65,8 +67,5 @@ public class Grupo {
 	}
 	public void setEquipes(List<Inscricao> equipes) {
 		this.equipes = equipes;
-	}
-	
-	
+	}	
 }
-

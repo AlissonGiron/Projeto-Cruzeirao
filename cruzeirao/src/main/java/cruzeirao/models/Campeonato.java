@@ -1,25 +1,30 @@
 package cruzeirao.models;
 
 import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
 @Access(AccessType.PROPERTY)
-@Table(name="MASSAGISTA")
-@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
+@Table(name="CAMPEONATO")
 public class Campeonato {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
+	private int id;
+	
+	@Column(name="NOME", nullable=false)
 	private String nome;
 	
 	@OneToMany
@@ -35,10 +40,22 @@ public class Campeonato {
 	private List<Categoria> categorias = new ArrayList<Categoria>();
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_INSCRICAO", nullable=true)
-	private Date dataInicioInscricao, dataFimInscricao, dataInicioCampeonato, dataFimCampeonato;
+	@Column(name="DATA_INICIO_INSCRICAO", nullable=false)
+	private Date dataInicioInscricao;
 	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATA_FIM_INSCRICAO", nullable=false)
+	private Date dataFimInscricao;
 	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATA_INICIO_CAMPEONATO", nullable=false)
+	private Date dataInicioCampeonato;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATA_FIM_CAMPEONATO", nullable=false)
+	private Date dataFimCampeonato;
+	
+	@Column(name="VALOR_TAXA", nullable=false)
 	private double valorTaxa;
 	
 	public String getNome() {

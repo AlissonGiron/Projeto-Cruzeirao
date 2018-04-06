@@ -13,6 +13,18 @@
 		<class>cruzeirao.models.Tecnico</class>
 		<class>cruzeirao.models.Torcedor</class>
 		<class>cruzeirao.models.Inscrito</class>
+		<class>cruzeirao.models.Campeonato</class>
+		<class>cruzeirao.models.Cartao</class>
+		<class>cruzeirao.models.Categoria</class>
+		<class>cruzeirao.models.Equipe</class>
+		<class>cruzeirao.models.Fase</class>
+		<class>cruzeirao.models.Gol</class>
+		<class>cruzeirao.models.Grupo</class>
+		<class>cruzeirao.models.Inscricao</class>
+		<class>cruzeirao.models.Local</class>
+		<class>cruzeirao.models.Partida</class>
+		<class>cruzeirao.models.PartidaFutebol</class>
+		<class>cruzeirao.models.Rodada</class>
 		<class>cruzeirao.data.converters.SexoConverter</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/CruzeiraoDB;create=true"/>
