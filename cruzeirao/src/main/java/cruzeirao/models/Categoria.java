@@ -3,16 +3,63 @@ package cruzeirao.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
 import cruzeirao.data.enums.Sexo;
 
+@Entity
+@Access(AccessType.PROPERTY)
+@Table(name="CATEGORIA")
+@PrimaryKeyJoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
 public class Categoria {
+	@OneToOne
+	@Column(name="NOME", nullable=true)
 	private String nome;
-	private int nascidosAte, minJogadores, maxJogadores;
+	
+	@OneToMany
+	@Column(name="NASCIDOS_ATE", nullable=true)
+	private int nascidosAte;
+	
+	@OneToMany
+	@Column(name="MIN_JOGADORES", nullable=true)
+	private int minJogadores; 
+	
+	@OneToMany
+	@Column(name="MAX_JOGADORES", nullable=true)
+	private int maxJogadores;
+	
+	@OneToMany
+	@Column(name="INSCRICOES", nullable=true)
 	private List<Inscricao> inscricoes = new ArrayList<Inscricao>();
+	
+	@OneToMany
+	@Column(name="FASES", nullable=true)
 	private List<Fase> fases = new ArrayList<Fase>();
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="TIPO_SEXO", nullable=false)
 	private Enum<Sexo> sexo;
+	
+	@OneToMany
+	@Column(name="CAMPEONATO", nullable=false) 
 	private Campeonato campeonato;
+	
+	@Column(name="INSCRICOES_HABILITADAS")
 	private boolean inscricoesHabilitadas;
+	
+	// CONSTRUCTOR 
+	public Categoria() {
+		inscricoesHabilitadas = false;
+	}
 	
 	public String getNome() {
 		return nome;
@@ -76,3 +123,5 @@ public class Categoria {
 		this.inscricoesHabilitadas = inscricoesHabilitadas;
 	}	
 }
+
+

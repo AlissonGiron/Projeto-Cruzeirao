@@ -1,13 +1,42 @@
 package cruzeirao.models;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Access(AccessType.PROPERTY)
+@Table(name="LOCAL")
+@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Local {
-	private String nome;
-	private String endereco;
-	private String bairro;
-	private String cidade;
-	private String CEP;
-	private String telefone;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_LOCAL", nullable=false)
 	private int numero;
+	
+	@Column(name="NOME", nullable=false)
+	private String nome;
+	
+	@Column(name="ENDERECO", nullable=false)
+	private String endereco;
+	
+	@Column(name="BAIRRO", nullable=false)
+	private String bairro;
+	
+	@Column(name="CIDADE", nullable=false)
+	private String cidade;
+	
+	@Column(name="CEP", nullable=false)
+	private String CEP;
+	
+	@Column(name="TELEFONE", nullable=false)
+	private String telefone;
 	
 	public String getNome() {
 		return nome;
@@ -52,3 +81,4 @@ public class Local {
 		this.numero = numero;
 	}	
 }
+
