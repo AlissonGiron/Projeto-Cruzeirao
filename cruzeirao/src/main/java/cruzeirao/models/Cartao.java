@@ -1,28 +1,29 @@
 package cruzeirao.models;
 
-import java.sql.Time;
-
+import java.util.Calendar;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import cruzeirao.data.enums.TipoCartao;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="CARTAO")
-@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Cartao {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
+	private int id;
 	
-	@OneToMany
 	@Column(name="CARTOES_JOGADORES", nullable=false) 
 	private Jogador jogador;
 	
@@ -30,9 +31,9 @@ public class Cartao {
 	@Column(name="TIPO_CARTAO", nullable=false)
 	private Enum<TipoCartao> tipo;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name="TEMPO_DE_JOGO", nullable=true)
-	private Time tempo;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="TEMPO_DE_JOGO", nullable=false)
+	private Calendar tempo;
 	
 	public Jogador getJogador() {
 		return jogador;
@@ -46,10 +47,10 @@ public class Cartao {
 	public void setTipo(Enum<TipoCartao> tipo) {
 		this.tipo = tipo;
 	}
-	public Time getTempo() {
+	public Calendar getTempo() {
 		return tempo;
 	}
-	public void setTempo(Time tempo) {
+	public void setTempo(Calendar tempo) {
 		this.tempo = tempo;
 	}	
 }

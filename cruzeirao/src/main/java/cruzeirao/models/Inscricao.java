@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,10 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,10 +22,10 @@ import javax.persistence.Table;
 public class Inscricao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_INSCRICAO", nullable=false)
+	@Column(name="ID", nullable=false)
+	private int id;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="NUMERO_INSCRICAO")
+    @Column(name="NUMERO_INSCRICAO", nullable=false)
 	private long numeroInscricao;
 	
 	@Column(name="INSCRICAO_VALIDA")
@@ -38,47 +34,35 @@ public class Inscricao {
 	@Column(name="PAGAMENTO_VALIDO")
 	private boolean pagamento;
 	
-	@OneToOne
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="TECNICO", nullable=false)
 	private Inscrito tecnico;
 	
-	@OneToOne
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="AUXILIAR", nullable=false)
 	private Inscrito auxiliar;
 	
-	@OneToOne
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="PREPADADOR_FISICO", nullable=false)
 	private Inscrito preparadorFisico;
 	
-	@OneToOne
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="MASSAGISTA", nullable=false)
 	private Inscrito massagista;
 	
-	@OneToOne
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="CATEGORIA", nullable=false)
 	private Categoria categoria;
 	
-	@OneToOne
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="EQUIPE", nullable=false)
 	private Equipe equipe;
 	
 	@OneToMany
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="JOGADORES", nullable=true)
 	private List<Inscrito> jogadores = new ArrayList<Inscrito>();
 	
 	@OneToMany
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="SUSPENSO_PROXIMA_PARTIDA", nullable=true)
 	private List<Inscrito> suspensoProximaPartida = new ArrayList<Inscrito>();
 	
 	@OneToMany
-	@JoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+	@Column(name="PARTIDAS", nullable=true)
 	private List<Partida> partidas = new ArrayList<Partida>();
-	
-	// CONSTRUCTOR
-	public Inscricao() {
-		inscricaoValida = false;
-		pagamento = false;
-	}
 	
 	public long getNumeroInscricao() {
 		return numeroInscricao;

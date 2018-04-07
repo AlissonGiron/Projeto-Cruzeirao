@@ -7,17 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="LOCAL")
-@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Local {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_LOCAL", nullable=false)
+	@Column(name="ID", nullable=false)
+	private int id;
+	
+	@Column(name="NUMERO", nullable=false)
 	private int numero;
 	
 	@Column(name="NOME", nullable=false)

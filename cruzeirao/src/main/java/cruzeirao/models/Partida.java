@@ -1,56 +1,52 @@
 package cruzeirao.models;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Access(AccessType.PROPERTY)
-@Table(name="ORGANIZADOR")
-@PrimaryKeyJoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
+@Table(name="PARTIDA")
 public class Partida {
-	@OneToMany
-	@JoinColumn(name="NUMERO_PARTIDA", referencedColumnName="ID")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
+	private int id;
+	
+	@Column(name="NUMERO_PARTIDA", nullable=false)
 	private int numeroPartida;
 	
-	@OneToMany
-	@JoinColumn(name="EQUIPE_MANDANTE", referencedColumnName="ID")
+	@Column(name="EQUIPE_MANDANTE", nullable=false)
 	private Inscricao equipeMandante; 
 	
-	@OneToMany
-	@JoinColumn(name="CATEGORIA", referencedColumnName="ID")
+	@Column(name="EQUIPE_VISITANTE", nullable=false)
 	private Inscricao equipeVisitante;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_PARTIDA", nullable=true)
-	private Date dataPartida;
+	@Column(name="DATA_PARTIDA", nullable=false)
+	private Calendar dataPartida;
 	
-	@OneToMany
-	@JoinColumn(name="LOCAL", referencedColumnName="ID")
+	@Column(name="LOCAL", nullable=false)
 	private Local local;
 	
-	@OneToMany
-	@JoinColumn(name="GRUPO", referencedColumnName="ID")
+	@Column(name="GRUPO", nullable=false)
 	private Grupo grupo;
 	
-	@OneToOne
-	@JoinColumn(name="RELATO_JUIZ, referencedColumnName="ID")
-	private String relatoJuiz;
+	@Column(name="RELATO_JUIZ", nullable=false)
+    private String relatoJuiz;
 	
-	@OneToMany
-	@Column(name="GOL_MANDANTES", nullable=true)
+	@Column(name="JUIZES", nullable=true)
 	private List<Juiz> juizes = new ArrayList<Juiz>();
 	
 	public int getNumeroPartida() {
@@ -71,10 +67,10 @@ public class Partida {
 	public void setEquipeVisitante(Inscricao equipeVisitante) {
 		this.equipeVisitante = equipeVisitante;
 	}
-	public Date getDataPartida() {
+	public Calendar getDataPartida() {
 		return dataPartida;
 	}
-	public void setDataPartida(Date dataPartida) {
+	public void setDataPartida(Calendar dataPartida) {
 		this.dataPartida = dataPartida;
 	}
 	public Local getLocal() {

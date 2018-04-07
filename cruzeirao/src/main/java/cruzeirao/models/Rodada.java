@@ -10,28 +10,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="RODADA")
-@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Rodada {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_PARTIDA", nullable=true)
+	@Column(name="ID", nullable=false)
+	private int id;
+	
+	@Column(name="NUMERO", nullable=false)
 	private int numero;
 	
-	@OneToOne
-	@JoinColumn(name="GRUPO_ID", referencedColumnName="ID")
+	@Column(name="GRUPO", nullable=false)
 	private Grupo grupo;
 	
-	@OneToMany
 	@Column(name="PARTIDAS", nullable=true)
 	private List<Partida> partidas = new ArrayList<Partida>();
 	

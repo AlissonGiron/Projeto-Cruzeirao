@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -59,7 +58,6 @@ public class PartidaFutebol extends Partida {
 	public void setCartoesVisitante(List<Cartao> cartoesVisitante) {
 		this.cartoesVisitante = cartoesVisitante;
 	}
-	
 	
 }
 

@@ -9,9 +9,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import cruzeirao.data.enums.Sexo;
@@ -19,22 +20,22 @@ import cruzeirao.data.enums.Sexo;
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="CATEGORIA")
-@PrimaryKeyJoinColumn(name="ID_INSCRICAO", referencedColumnName="ID")
 public class Categoria {
-	@OneToOne
-	@Column(name="NOME", nullable=true)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
+	private int id;
+	
+	@Column(name="NOME", nullable=false)
 	private String nome;
 	
-	@OneToMany
-	@Column(name="NASCIDOS_ATE", nullable=true)
+	@Column(name="NASCIDOS_ATE", nullable=false)
 	private int nascidosAte;
 	
-	@OneToMany
-	@Column(name="MIN_JOGADORES", nullable=true)
+	@Column(name="MIN_JOGADORES", nullable=false)
 	private int minJogadores; 
 	
-	@OneToMany
-	@Column(name="MAX_JOGADORES", nullable=true)
+	@Column(name="MAX_JOGADORES", nullable=false)
 	private int maxJogadores;
 	
 	@OneToMany
@@ -49,17 +50,11 @@ public class Categoria {
 	@Column(name="TIPO_SEXO", nullable=false)
 	private Enum<Sexo> sexo;
 	
-	@OneToMany
 	@Column(name="CAMPEONATO", nullable=false) 
 	private Campeonato campeonato;
 	
 	@Column(name="INSCRICOES_HABILITADAS")
 	private boolean inscricoesHabilitadas;
-	
-	// CONSTRUCTOR 
-	public Categoria() {
-		inscricoesHabilitadas = false;
-	}
 	
 	public String getNome() {
 		return nome;

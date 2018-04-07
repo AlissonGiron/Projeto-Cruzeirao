@@ -1,13 +1,14 @@
 package cruzeirao.models;
 
-import java.sql.Time;
+import java.util.Calendar;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,15 +16,18 @@ import javax.persistence.TemporalType;
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="GOL")
-@PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Gol {
-	@OneToMany
-	@Column(name="PARTIDA_FUTEBOL", nullable=true)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
+	private int id;
+	
+	@Column(name="JOGADOR", nullable=false)
 	private Jogador jogador;
 	
-	Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="TEMPO", nullable=true)
-	private Time tempo;
+	private Calendar tempo;
 	
 	@Column(name="GOL_DE_PENALTI")  
 	private boolean golDePenalti;
@@ -34,10 +38,10 @@ public class Gol {
 	public void setJogador(Jogador jogador) {
 		this.jogador = jogador;
 	}
-	public Time getTempo() {
+	public Calendar getTempo() {
 		return tempo;
 	}
-	public void setTempo(Time tempo) {
+	public void setTempo(Calendar tempo) {
 		this.tempo = tempo;
 	}
 	public boolean isGolDePenalti() {

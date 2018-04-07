@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -41,19 +42,19 @@ public class Campeonato {
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_INICIO_INSCRICAO", nullable=false)
-	private Date dataInicioInscricao;
+	private Calendar dataInicioInscricao;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_FIM_INSCRICAO", nullable=false)
-	private Date dataFimInscricao;
+	private Calendar dataFimInscricao;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_INICIO_CAMPEONATO", nullable=false)
-	private Date dataInicioCampeonato;
+	private Calendar dataInicioCampeonato;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_FIM_CAMPEONATO", nullable=false)
-	private Date dataFimCampeonato;
+	private Calendar dataFimCampeonato;
 	
 	@Column(name="VALOR_TAXA", nullable=false)
 	private double valorTaxa;
