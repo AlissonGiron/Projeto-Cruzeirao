@@ -6,7 +6,6 @@
    xmlns:composite = "http://java.sun.com/jsf/composite">
 
 	<composite:interface>
-		<composite:attribute name="label"/>
 		<composite:attribute name="value" default="0"/>
 		<composite:attribute name="step" default="1"/>
 		<composite:attribute name="min" default="-2147483648"/>
@@ -15,7 +14,6 @@
 	</composite:interface>
 
 	<composite:implementation>
-		<p:outputLabel value="#{cc.attrs.label}"/>
 		<p:spinner value="#{cc.attrs.value}" stepFactor="#{cc.attrs.step}" min="#{cc.attrs.min}" max="#{cc.attrs.max}" prefix="#{cc.attrs.prefix}"/>
 		<br/>
 	</composite:implementation>

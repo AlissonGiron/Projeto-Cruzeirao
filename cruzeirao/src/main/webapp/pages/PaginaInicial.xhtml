@@ -1,59 +1,52 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3c.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:components="http://java.sun.com/jsf/composite/components">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
  <h:head>
  	<h:outputStylesheet name="paginainicial.css" library="css" />
  </h:head>
  <h:body style="margin: 0;">
- 	<!-- 
- 	<div style="background-color: red; width: 100vw; height: 100vh;">
- 	
- 	<iframe width="100%" height="100%" src="https://www.youtube.com/embed/4IIz1YFTQIg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
- 	
- 	</div>
- 	
- 	<br/>
- 	<div style="background-color: white; width: 100vw; height: 100vh;"></div>
- 	 -->
  	
  	<div class="background-video">
-	  <iframe frameborder="0" height="100%" width="100%" 
+	  <!-- <iframe frameborder="0" height="100%" width="100%" 
 	    src="https://youtube.com/embed/4IIz1YFTQIg?autoplay=1&amp;controls=0&amp;showinfo=0&amp;autohide=1&amp;modestbranding=1&amp;loop=1&amp;playlist=4IIz1YFTQIg">
-	  </iframe>
+	  </iframe> -->	
 	</div>
 	
 	<div class="background-opacity">
  	</div> 	
  	
  	<div id="cont01" style="width: 100vw; height: 100vh;">
- 		<p:graphicImage 
+ 		
+	 		<p:graphicImage 
 			    library="images" 
 				name="logo.png"
 				alt="Cruzeirao" 
 				title="Cruzeirao"
 				styleClass="logo"/>	
 				
-				
 		<a id="btnDown" href="#cont02"><span></span></a>
 		
-		<a id="btnLogin" href="campeonato/index.xhtml">Entrar</a>
+		<a id="btnLogin" href="usuario/login.xhtml">Entrar</a>
 		
-		<a id="btnRegister" href="usuario/index.xhtml"><span></span>Registrar</a>		
-		
+		<a id="btnRegister" href="usuario/typeSelect.xhtml"><span></span>Registrar</a>
  	</div>
  	
+ 	<!-- 
  	<div id="cont02" style="width: 100vw; height: 100vh; background: white;">
- 		<components:textInput label="Label Teste" value="Valor" placeholder="digite um valor..."/>
- 		<components:passwordInput label="Senha: " placeholder="Digite sua senha..."/>
- 		<components:dateTimeInput label="Data: " type="date"/>
- 		<components:dateTimeInput label="Hora: " type="time"/>
- 		<components:dateTimeInput label="DataHora: " type="datetime"/>
+ 		
  	</div>
- 	
+ 	 -->
  	<div id="contatosBackground"></div>
  	
+ 	<!-- 
  	<div id="contatosBackgroundBlur"></div>
- 	
- 	<!-- <div id="contatos" class="contact">
+ 	 -->
+ 	<div id="contatos" class="contact">
  		<h2>Contato</h2>
  		<br/>
  		 		
@@ -65,9 +58,21 @@
 	 		<br/><br/>
 	 		<input type="text" class="textBox"  placeholder="Assunto"/>
 	 		<br/><br/>
-	 		<input type="text" class="textBox"  placeholder="Mensagem"/> 		
+	 		<input type="text" class="textBox"  placeholder="Mensagem"/> 	
+	 		<br/><br/>
+	 		<div style="width: 500px;
+					    height: 100px;
+					    background-color: grey;
+					    margin: 20px auto;
+					    line-height: 100px;
+					    font-size: 40px;
+					    font-family: 'Helvetica';
+					    color: white;
+					    border-radius: 20px;">
+	 			Enviar
+	 		</div>
  		</div> 		
- 	</div> -->
+ 	</div>
  	
   
  </h:body>

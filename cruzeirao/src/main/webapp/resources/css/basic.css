@@ -89,13 +89,16 @@ body {
 a.ui-link.ui-widget.cabecalhoLink {
 	float: right;
     margin-right: 10px;
-    background-color: #2f4f4f;
-    border-top: 10px solid #375d5d;
+    border-top: 5px solid #375d5d;
     padding: 20px;
     padding-top: 10px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     font-size: 14px;
+}
+
+a.ui-link.ui-widget.cabecalhoLink:hover {
+	background-color: #2f4f4f;	
 }
 
 .contentTitle {
@@ -212,3 +215,32 @@ tr.ui-widget-content
 	border: 1px solid transparent;
 }
 
+.cardTitle .ui-button-text.ui-c {
+    background-color: white;
+}
+
+.cardType {
+    height: 20vh;
+    background-color: cadetblue;
+    width: 20vw;
+    margin: 20px;
+    border-radius: 20px;
+    line-height: 20vh;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    float: left;	
+    text-decoration: none;
+}
+
+.titleType {
+	width: 100vw;
+    text-align: center;
+    height: 10vh;
+    line-height: 10vh;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: white;
+    background-color: black;
+    padding: 20px;
+}

@@ -4,7 +4,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
 	
 	<ui:define name="title">
 		<h:outputText value="Equipe" />
@@ -26,7 +27,7 @@
 					<p:inputText></p:inputText>
 					
 					<p:outputLabel>Data de Fundação:</p:outputLabel> 
-					<p:calendar></p:calendar>	
+					<comp:dateTimeInput type="datetime"/>	
 					
 					<p:outputLabel>Cidade:</p:outputLabel> 
 					<p:inputText></p:inputText>	
