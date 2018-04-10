@@ -1,5 +1,5 @@
 package cruzeirao.web;
-
+/*
 import cruzeirao.data.enums.TipoDocumento;
 import cruzeirao.models.PreparadorFisico;
 import cruzeirao.models.Usuario;
@@ -31,4 +31,4 @@ public class UsuarioMB extends ManagedBeanBase<Usuario> {
 		
 		return true;
 	}
-}
+}*/

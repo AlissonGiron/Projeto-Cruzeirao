@@ -1,6 +1,5 @@
 package cruzeirao.models;
 
-import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -14,7 +13,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -38,7 +36,7 @@ public class Campeonato {
 	
 	@OneToMany
 	@Column(name="CATEGORIAS", nullable=true)
-	private List<Categoria> categorias = new ArrayList<Categoria>();
+	private ArrayList<Categoria> categorias = new ArrayList<Categoria>();
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_INICIO_INSCRICAO", nullable=false)
@@ -77,34 +75,34 @@ public class Campeonato {
 	public void setJuizes(ArrayList<Juiz> juizes) {
 		this.juizes = juizes;
 	}
-	public List<Categoria> getCategorias() {
+	public ArrayList<Categoria> getCategorias() {
 		return categorias;
 	}
-	public void setCategorias(List<Categoria> categorias) {
+	public void setCategorias(ArrayList<Categoria> categorias) {
 		this.categorias = categorias;
 	}
-	public Date getDataInicioInscricao() {
+	public Calendar getDataInicioInscricao() {
 		return dataInicioInscricao;
 	}
-	public void setDataInicioInscricao(Date dataInicioInscricao) {
+	public void setDataInicioInscricao(Calendar dataInicioInscricao) {
 		this.dataInicioInscricao = dataInicioInscricao;
 	}
-	public Date getDataFimInscricao() {
+	public Calendar getDataFimInscricao() {
 		return dataFimInscricao;
 	}
-	public void setDataFimInscricao(Date dataFimInscricao) {
+	public void setDataFimInscricao(Calendar dataFimInscricao) {
 		this.dataFimInscricao = dataFimInscricao;
 	}
-	public Date getDataInicioCampeonato() {
+	public Calendar getDataInicioCampeonato() {
 		return dataInicioCampeonato;
 	}
-	public void setDataInicioCampeonato(Date dataInicioCampeonato) {
+	public void setDataInicioCampeonato(Calendar dataInicioCampeonato) {
 		this.dataInicioCampeonato = dataInicioCampeonato;
 	}
-	public Date getDataFimCampeonato() {
+	public Calendar getDataFimCampeonato() {
 		return dataFimCampeonato;
 	}
-	public void setDataFimCampeonato(Date dataFimCampeonato) {
+	public void setDataFimCampeonato(Calendar dataFimCampeonato) {
 		this.dataFimCampeonato = dataFimCampeonato;
 	}
 	public double getValorTaxa() {
@@ -113,7 +111,4 @@ public class Campeonato {
 	public void setValorTaxa(double valorTaxa) {
 		this.valorTaxa = valorTaxa;
 	}
-	
-	
 }
-

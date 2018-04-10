@@ -1,7 +1,6 @@
 package cruzeirao.models;
 
 import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -18,13 +17,13 @@ public class Torcedor extends Usuario {
 	
 	@OneToMany
 	@Column(name="EQUIPES", nullable=true)
-	private List<Equipe> equipes = new ArrayList<Equipe>();
+	private ArrayList<Equipe> equipes = new ArrayList<Equipe>();
 
 	// GETS AND SETS
-	public List<Equipe> getEquipes() {
+	public ArrayList<Equipe> getEquipes() {
 		return equipes;
 	}
-	public void setEquipes(List<Equipe> equipes) {
+	public void setEquipes(ArrayList<Equipe> equipes) {
 		this.equipes = equipes;
 	}
 }

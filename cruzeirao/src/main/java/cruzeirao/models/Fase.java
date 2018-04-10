@@ -2,8 +2,6 @@ package cruzeirao.models;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -13,11 +11,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import cruzeirao.data.enums.Formato;
 
 @Entity
@@ -48,8 +46,8 @@ public class Fase {
 	private int numeroFase;
 	
 	@OneToMany
-	@Column(name="GRUPOS", nullable=true)
-	private List<Grupo> grupos = new ArrayList<Grupo>();
+	@JoinColumn(name = "ID")
+	private ArrayList<Grupo> grupos = new ArrayList<Grupo>();
 	
 	public Calendar getDataInicio() {
 		return dataInicio;
@@ -81,11 +79,10 @@ public class Fase {
 	public void setNumeroFase(int numeroFase) {
 		this.numeroFase = numeroFase;
 	}
-	public List<Grupo> getGrupos() {
+	public ArrayList<Grupo> getGrupos() {
 		return grupos;
 	}
-	public void setGrupos(List<Grupo> grupos) {
+	public void setGrupos(ArrayList<Grupo> grupos) {
 		this.grupos = grupos;
 	}
 }
-

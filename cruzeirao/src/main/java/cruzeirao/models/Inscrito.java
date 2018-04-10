@@ -28,11 +28,10 @@ public class Inscrito {
 	@Column(name="INSCRICAO_VALIDADA")
 	private boolean inscricaoValidada;
 	
-	@OneToOne
 	@JoinColumn(name="USUARIO_ID", referencedColumnName="ID")
 	private IntegranteEquipe inscrito;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="INSCRICAO")
 	private Inscricao inscricao;
 

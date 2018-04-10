@@ -1,5 +1,5 @@
 package cruzeirao.web;
-
+/*
 import cruzeirao.core.CoreBase;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
@@ -40,4 +40,4 @@ public abstract class ManagedBeanBase<T> {
 	public ArrayList<T> getAll() {
 		return coreBase.getAll();
 	}
-}
+}*/
