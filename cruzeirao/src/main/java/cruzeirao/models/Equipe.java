@@ -31,12 +31,11 @@ public class Equipe {
 	@Column(name="CIDADE", nullable=false)
 	private String cidade;
 	
-	@Temporal(TemporalType.TIME)
+	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_FUNDACAO", nullable=false)
 	private Calendar dataFundacao;
 	
 	@OneToMany
-	@Column(name="DIRETORES", nullable=true)
 	private List<Diretor> diretores = new ArrayList<Diretor>();
 	
 	public String getNome() {

@@ -31,11 +31,9 @@ public class Grupo {
 	private int numeroEquipes;
 	
 	@OneToMany
-	@Column(name="RODADAS", nullable=true)
 	private List<Rodada> rodadas = new ArrayList<Rodada>();
 	
 	@OneToMany
-	@Column(name="EQUIPES", nullable=true)
 	private List<Inscricao> equipes = new ArrayList<Inscricao>();
 	
 	public String getNome() {

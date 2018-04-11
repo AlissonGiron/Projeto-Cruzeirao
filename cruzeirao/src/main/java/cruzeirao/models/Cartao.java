@@ -27,7 +27,7 @@ public class Cartao {
 	@Column(name="CARTOES_JOGADORES", nullable=false) 
 	private Jogador jogador;
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name="TIPO_CARTAO", nullable=false)
 	private Enum<TipoCartao> tipo;
 	

@@ -35,7 +35,7 @@ public class Fase {
 	@Column(name="DATA_FIM", nullable=false)
 	private Calendar dataFim;
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name="TIPO_FORMATO", nullable=false)
 	private Enum<Formato> formato;
 	
@@ -46,7 +46,6 @@ public class Fase {
 	private int numeroFase;
 	
 	@OneToMany
-	@JoinColumn(name = "ID")
 	private ArrayList<Grupo> grupos = new ArrayList<Grupo>();
 	
 	public Calendar getDataInicio() {

@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import cruzeirao.data.interfaces.IntegranteEquipe;
 
@@ -28,11 +29,12 @@ public class Inscrito {
 	@Column(name="INSCRICAO_VALIDADA")
 	private boolean inscricaoValidada;
 	
-	@JoinColumn(name="USUARIO_ID", referencedColumnName="ID")
-	private IntegranteEquipe inscrito;
+	@OneToOne
+	@Column(name="INSCRITO")
+	private Usuario inscrito;
 	
 	@ManyToOne(cascade=CascadeType.PERSIST)
-	@JoinColumn(name="INSCRICAO")
+	@JoinColumn(name="ID")
 	private Inscricao inscricao;
 
 	// CONSTRUCTOR
@@ -54,10 +56,10 @@ public class Inscrito {
 	public void setInscricaoValidada(boolean inscricaoValida) {
 		this.inscricaoValidada = inscricaoValida;
 	}
-	public IntegranteEquipe getInscrito() {
+	public Usuario getInscrito() {
 		return inscrito;
 	}
-	public void setInscrito(IntegranteEquipe inscrito) {
+	public void setInscrito(Usuario inscrito) {
 		this.inscrito = inscrito;
 	}
 	public Inscricao getInscricao() {

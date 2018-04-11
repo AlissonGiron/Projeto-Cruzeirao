@@ -36,14 +36,12 @@ public class Categoria {
 	private int maxJogadores;
 	
 	@OneToMany
-	@Column(name="INSCRICOES", nullable=true)
 	private ArrayList<Inscricao> inscricoes = new ArrayList<Inscricao>();
 	
 	@OneToMany
-	@Column(name="FASES", nullable=true)
 	private ArrayList<Fase> fases = new ArrayList<Fase>();
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name="TIPO_SEXO", nullable=false)
 	private Enum<Sexo> sexo;
 	
