@@ -3,7 +3,6 @@ package cruzeirao.models;
 import java.util.ArrayList;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -17,7 +16,6 @@ import cruzeirao.data.interfaces.IntegranteEquipe;
 public class Tecnico extends Usuario  implements IntegranteEquipe {
 	
 	@OneToMany
-	@Column(name="INSCRICAO_EM_CAMPEONATOS", nullable=true)
 	private ArrayList<Inscrito> inscricaoEmCampeonatos;
 
 	// GETS AND SETS

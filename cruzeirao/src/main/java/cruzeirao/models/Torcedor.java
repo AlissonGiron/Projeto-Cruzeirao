@@ -3,7 +3,6 @@ package cruzeirao.models;
 import java.util.ArrayList;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -16,7 +15,6 @@ import javax.persistence.Table;
 public class Torcedor extends Usuario {
 	
 	@OneToMany
-	@Column(name="EQUIPES", nullable=true)
 	private ArrayList<Equipe> equipes = new ArrayList<Equipe>();
 
 	// GETS AND SETS

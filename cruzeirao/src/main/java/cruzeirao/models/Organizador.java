@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -17,7 +16,6 @@ import javax.persistence.Table;
 public class Organizador extends Usuario {
 	
 	@OneToMany
-	@Column(name="CAMPEONATOS", nullable=true)
 	private List<Campeonato> campeonatos = new ArrayList<Campeonato>();
 	
 	// GETS AND SETS
