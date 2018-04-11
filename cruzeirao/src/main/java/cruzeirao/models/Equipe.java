@@ -2,8 +2,6 @@ package cruzeirao.models;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -35,8 +33,8 @@ public class Equipe {
 	@Column(name="DATA_FUNDACAO", nullable=false)
 	private Calendar dataFundacao;
 	
-	@ManyToMany(mappedBy="DIRETOR_EQUIPE")
-	private List<Diretor> diretores = new ArrayList<Diretor>();
+	@ManyToMany(mappedBy="equipes")
+	private ArrayList<Diretor> diretores = new ArrayList<Diretor>();
 	
 	public String getNome() {
 		return nome;
@@ -56,11 +54,10 @@ public class Equipe {
 	public void setDataFundacao(Calendar dataFundacao) {
 		this.dataFundacao = dataFundacao;
 	}
-	public List<Diretor> getDiretores() {
+	public ArrayList<Diretor> getDiretores() {
 		return diretores;
 	}
-	public void setDiretores(List<Diretor> diretores) {
+	public void setDiretores(ArrayList<Diretor> diretores) {
 		this.diretores = diretores;
 	}
 }
-

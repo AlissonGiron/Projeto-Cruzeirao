@@ -7,16 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-import cruzeirao.data.interfaces.IntegranteEquipe;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="TECNICO")
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
-public class Tecnico extends Usuario  implements IntegranteEquipe {
+public class Tecnico extends Usuario {
 	
-	@OneToMany
-	private ArrayList<Inscrito> inscricaoEmCampeonatos;
+	@OneToMany(mappedBy="inscrito")
+	private ArrayList<Inscrito> inscricaoEmCampeonatos = new ArrayList<Inscrito>();
 
 	// GETS AND SETS
 	public ArrayList<Inscrito> getInscricaoEmCampeonatos() {

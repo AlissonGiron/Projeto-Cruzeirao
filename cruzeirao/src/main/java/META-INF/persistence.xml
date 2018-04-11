@@ -11,7 +11,6 @@
 		<class>cruzeirao.models.Organizador</class>
 		<class>cruzeirao.models.PreparadorFisico</class>
 		<class>cruzeirao.models.Tecnico</class>
-		<class>cruzeirao.models.Torcedor</class>
 		<class>cruzeirao.models.Inscrito</class>
 		<class>cruzeirao.models.Campeonato</class>
 		<class>cruzeirao.models.Cartao</class>

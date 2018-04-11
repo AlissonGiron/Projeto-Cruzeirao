@@ -1,4 +1,4 @@
-package cruzeirao.models;
+/*package cruzeirao.models;
 
 import java.util.ArrayList;
 import javax.persistence.Access;
@@ -24,4 +24,4 @@ public class Torcedor extends Usuario {
 	public void setEquipes(ArrayList<Equipe> equipes) {
 		this.equipes = equipes;
 	}
-}
+}*/

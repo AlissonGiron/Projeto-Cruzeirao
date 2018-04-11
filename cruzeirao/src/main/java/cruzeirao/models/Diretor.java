@@ -1,7 +1,6 @@
 package cruzeirao.models;
 
 import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
@@ -18,18 +17,14 @@ import javax.persistence.JoinColumn;
 public class Diretor extends Usuario {
 	
 	@ManyToMany
-	@JoinTable( 
-		name ="DIRETOR_EQUIPE",
-		joinColumns = @JoinColumn(name ="ID"),
-		inverseJoinColumns = @JoinColumn(name="ID")
-	)
-	private List<Equipe> equipes = new ArrayList<Equipe>();
+	@JoinTable(name="DIRETOR_EQUIPE", joinColumns=@JoinColumn(name="ID"), inverseJoinColumns=@JoinColumn(name="ID"))
+	private ArrayList<Equipe> equipes = new ArrayList<Equipe>();
 
 	// GETS AND SETS
-	public List<Equipe> getEquipes() {
+	public ArrayList<Equipe> getEquipes() {
 		return equipes;
 	}
-	public void setEquipes(List<Equipe> equipes) {
+	public void setEquipes(ArrayList<Equipe> equipes) {
 		this.equipes = equipes;
 	}
 }

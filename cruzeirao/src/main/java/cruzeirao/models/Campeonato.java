@@ -57,54 +57,70 @@ public class Campeonato {
 	@Column(name="VALOR_TAXA", nullable=false)
 	private double valorTaxa;
 	
+	// GETS AND SETS
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 	public ArrayList<Local> getLocais() {
 		return locais;
 	}
 	public void setLocais(ArrayList<Local> locais) {
 		this.locais = locais;
 	}
+	
 	public ArrayList<Juiz> getJuizes() {
 		return juizes;
 	}
 	public void setJuizes(ArrayList<Juiz> juizes) {
 		this.juizes = juizes;
 	}
+	
 	public ArrayList<Categoria> getCategorias() {
 		return categorias;
 	}
 	public void setCategorias(ArrayList<Categoria> categorias) {
 		this.categorias = categorias;
 	}
+	
 	public Calendar getDataInicioInscricao() {
 		return dataInicioInscricao;
 	}
 	public void setDataInicioInscricao(Calendar dataInicioInscricao) {
 		this.dataInicioInscricao = dataInicioInscricao;
 	}
+	
 	public Calendar getDataFimInscricao() {
 		return dataFimInscricao;
 	}
 	public void setDataFimInscricao(Calendar dataFimInscricao) {
 		this.dataFimInscricao = dataFimInscricao;
 	}
+	
 	public Calendar getDataInicioCampeonato() {
 		return dataInicioCampeonato;
 	}
 	public void setDataInicioCampeonato(Calendar dataInicioCampeonato) {
 		this.dataInicioCampeonato = dataInicioCampeonato;
 	}
+	
 	public Calendar getDataFimCampeonato() {
 		return dataFimCampeonato;
 	}
 	public void setDataFimCampeonato(Calendar dataFimCampeonato) {
 		this.dataFimCampeonato = dataFimCampeonato;
 	}
+	
 	public double getValorTaxa() {
 		return valorTaxa;
 	}
