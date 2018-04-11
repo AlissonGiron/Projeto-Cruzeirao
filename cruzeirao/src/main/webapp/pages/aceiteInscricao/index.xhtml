@@ -1,0 +1,54 @@
+<ui:composition template="../comuns/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
+	
+	<ui:define name="title">
+		<h:outputText value="Convites para Campeonato" />
+	</ui:define>
+
+	<ui:define name="principal">
+		
+		<div class="contentTitle"> Convites para Campeonato</div>
+		
+		<div class="pageContent">
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<div style="float:right">
+						<comp:booleanInput class="btnSelect" trueLabel="Aceito" falseLabel="Pendente" value="false"/>			
+					</div>
+	
+					<div style="height: 70px; line-height: 70px;">
+						Cruzeirão 2018  |  EC São Bento
+					</div>
+				</div>				
+			</div> 
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<div style="float:right">
+						<comp:booleanInput class="btnSelect" trueLabel="Aceito" falseLabel="Pendente" value="false"/>			
+					</div>
+	
+					<div style="height: 70px; line-height: 70px;">
+						Cruzeirão 2017  |  Xurupita FC
+					</div>
+				</div>				
+			</div> 
+			<br/>		
+						   
+			   	
+		   	<div class="buttonProvisorioLine"></div>
+		   	
+		   	
+		   	<div class="rodape"></div>	
+       	
+		</div>
+	</ui:define>
+
+	
+</ui:composition>

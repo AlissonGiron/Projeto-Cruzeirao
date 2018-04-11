@@ -1,0 +1,99 @@
+<ui:composition template="../comuns/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
+	
+	<ui:define name="title">
+		<h:outputText value="Inscrição" />
+	</ui:define>
+
+	<ui:define name="principal">
+		
+		<div class="contentTitle"> Visualizar Inscrição </div>
+		
+		<div class="pageContent">
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCampeonato">
+				</div>
+				
+				<p:panelGrid style="margin: 20px auto;" columns="2">	
+					EC São Bento
+				</p:panelGrid>		
+				
+				<div style="margin: 0 auto; padding: 20px; width: 50vw; border-top: 3px solid indianred;">
+					<p style="text-align: center; font-weight: bold;">Jogadores</p>
+					
+					<p:panelGrid style="margin: 20px auto; border-bottom: 3px solid cadetblue;" columns="2">
+						<p>Alisson Henrique dos Santos Giron</p>
+						<p>Aprovação Pendente</p>					
+						<comp:booleanInput class="btnSelect" trueLabel="Aceito" falseLabel="Pendente" value="false"/>	
+					</p:panelGrid>
+					
+					<br/>
+					
+					<p style="text-align: center; font-weight: bold;">Técnico</p>
+					<p:panelGrid style="margin: 20px auto; border-bottom: 3px solid cadetblue;" columns="2">
+						<p>Guilherme</p>
+						<p>Aprovação Pendente</p>					
+						<comp:booleanInput class="btnSelect" trueLabel="Aceito" falseLabel="Pendente" value="false"/>	
+					</p:panelGrid>	
+					
+					
+					<br/>
+					<p style="text-align: center; font-weight: bold;">Auxiliar</p>
+					<p:panelGrid style="margin: 20px auto; border-bottom: 3px solid cadetblue;" columns="2">
+						<p>Rafael</p>
+						<p>Aprovação Pendente</p>					
+						<comp:booleanInput class="btnSelect" trueLabel="Aceito" falseLabel="Pendente" value="false"/>	
+					</p:panelGrid>	
+					
+					
+					<br/>
+					<p style="text-align: center; font-weight: bold;">Preparador Físico</p>
+					<p:panelGrid style="margin: 20px auto; border-bottom: 3px solid cadetblue;" columns="2">
+						<p>Vitor</p>
+						<p>Aprovação Pendente</p>					
+						<comp:booleanInput class="btnSelect" trueLabel="Aceito" falseLabel="Pendente" value="false"/>	
+					</p:panelGrid>	
+					
+					
+					<br/>
+					<p style="text-align: center; font-weight: bold;">Massagista</p>
+					<p:panelGrid style="margin: 20px auto; border-bottom: 3px solid cadetblue;" columns="2">
+						<p>Gabriel</p>
+						<p>Aprovação Pendente</p>					
+						<comp:booleanInput class="btnSelect" trueLabel="Aceito" falseLabel="Pendente" value="false"/>	
+					</p:panelGrid>	
+					
+					
+					<br/>
+					<p:panelGrid style="margin: 20px auto; border-top: 3px solid indianred;" columns="2">
+						<comp:booleanInput class="btnSelect" trueLabel="Pagamento Realizado" falseLabel="Pagamento Pendente" value="false"/>
+						<p:button value="Salvar"></p:button>
+					</p:panelGrid>		
+				</div>
+				
+				
+			</div>
+			
+			<br></br>
+			
+			
+			<br/>		   	
+		   	
+		   	<div class="buttonProvisorioLine"></div>		   	
+		   	
+		   	<div class="rodape"></div>	
+       	</div>
+	</ui:define>	
+</ui:composition>
+
+
+
+
+
