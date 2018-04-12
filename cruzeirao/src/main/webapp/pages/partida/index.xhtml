@@ -1,0 +1,57 @@
+<ui:composition template="../comuns/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	
+	<ui:define name="title">
+		<h:outputText value="Rodada" />
+	</ui:define>
+
+	<ui:define name="principal">
+		
+		<div class="contentTitle">Partidas</div>
+		
+		<div class="pageContent">
+			<div class="pageTitle">
+			    <p:button styleClass="btnVoltar" value="Voltar" href="../rodada/edit.xhtml"></p:button>
+				1ª Rodada
+			</div>
+			
+			<p:button styleClass="btnDelete" value="Gerar Partidas"></p:button>		
+			<br/>
+			<br/>
+			<br/>
+			
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<p:button styleClass="btnDelete" value="X"></p:button>				
+					<p>EC São Bento x Xurupita FC</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+						<p>Local: Estádio Sorocaba</p>
+						<p>Horário: 25/05/2018 19h30</p>
+					</div>
+					<p:button styleClass="btnView" value="Editar" href="edit.xhtml"></p:button>
+				</div>
+			</div>
+			
+			<br/>	
+					
+			<div style="height: 200px;"></div>	   
+			   
+		   	<a href="create.xhtml" class="buttonProvisorio">Adicionar Partida</a>
+		   	<div class="buttonProvisorioLine"></div>
+		   	
+		   	
+		   	<div class="rodape"></div>	
+       	
+		</div>
+	</ui:define>
+
+	
+</ui:composition>

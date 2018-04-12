@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<ui:composition template="../comuns/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	
+	<ui:define name="title">
+		<h:outputText value="Rodada" />
+	</ui:define>
 
-</body>
-</html>
+	<ui:define name="principal">
+		
+		<div class="contentTitle">Rodadas</div>
+		
+		<div class="pageContent">
+			<div class="pageTitle">
+			    <p:button styleClass="btnVoltar" value="Voltar" href="../grupo/edit.xhtml"></p:button>
+				Grupo A				
+			</div>
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<p:button styleClass="btnDelete" value="X"></p:button>				
+					<p>1ª Rodada</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+						<p><br/><br/></p>
+					</div>
+					<p:button styleClass="btnView" value="Editar" href="edit.xhtml"></p:button>
+				</div>
+			</div>  
+			<br/>
+			
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<p:button styleClass="btnDelete" value="X"></p:button>				
+					<p>2ª Rodada</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+					<p><br/><br/></p>
+					</div>
+					<p:button styleClass="btnView" value="Editar" href="edit.xhtml"></p:button>
+				</div>
+			</div>  
+			
+			<br/>	
+					
+			<div class="itemCard">
+				<div class="cardTitle cardCategoria">
+					<p:button styleClass="btnDelete" value="X"></p:button>				
+					<p>3ª Rodada</p>
+				</div>
+				
+				<div class="cardInfo">
+					<div style="width: 50%; display: inline-block">
+						<p><br/><br/></p>
+					</div>
+					<p:button styleClass="btnView" value="Editar" href="edit.xhtml"></p:button>
+				</div>
+			</div>  	   
+			   
+		   	<a href="create.xhtml" class="buttonProvisorio">Adicionar Rodada</a>
+		   	<div class="buttonProvisorioLine"></div>
+		   	
+		   	
+		   	<div class="rodape"></div>	
+       	
+		</div>
+	</ui:define>
+
+	
+</ui:composition>
