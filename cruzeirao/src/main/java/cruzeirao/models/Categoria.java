@@ -1,8 +1,6 @@
 package cruzeirao.models;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -14,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import cruzeirao.data.enums.Sexo;
 
 @Entity
@@ -39,14 +36,12 @@ public class Categoria {
 	private int maxJogadores;
 	
 	@OneToMany
-	@Column(name="INSCRICOES", nullable=true)
-	private List<Inscricao> inscricoes = new ArrayList<Inscricao>();
+	private ArrayList<Inscricao> inscricoes = new ArrayList<Inscricao>();
 	
 	@OneToMany
-	@Column(name="FASES", nullable=true)
-	private List<Fase> fases = new ArrayList<Fase>();
+	private ArrayList<Fase> fases = new ArrayList<Fase>();
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name="TIPO_SEXO", nullable=false)
 	private Enum<Sexo> sexo;
 	
@@ -87,16 +82,16 @@ public class Categoria {
 	public void setMaxJogadores(int maxJogadores) {
 		this.maxJogadores = maxJogadores;
 	}
-	public List<Inscricao> getInscricoes() {
+	public ArrayList<Inscricao> getInscricoes() {
 		return inscricoes;
 	}
-	public void setInscricoes(List<Inscricao> inscricoes) {
+	public void setInscricoes(ArrayList<Inscricao> inscricoes) {
 		this.inscricoes = inscricoes;
 	}
-	public List<Fase> getFases() {
+	public ArrayList<Fase> getFases() {
 		return fases;
 	}
-	public void setFases(List<Fase> fases) {
+	public void setFases(ArrayList<Fase> fases) {
 		this.fases = fases;
 	}
 	public Enum<Sexo> getSexo() {
@@ -118,5 +113,3 @@ public class Categoria {
 		this.inscricoesHabilitadas = inscricoesHabilitadas;
 	}	
 }
-
-

@@ -10,15 +10,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="INSCRICAO")
-@Inheritance(strategy=InheritanceType.JOINED)
 public class Inscricao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,15 +50,12 @@ public class Inscricao {
 	private Equipe equipe;
 	
 	@OneToMany
-	@Column(name="JOGADORES", nullable=true)
 	private List<Inscrito> jogadores = new ArrayList<Inscrito>();
 	
 	@OneToMany
-	@Column(name="SUSPENSO_PROXIMA_PARTIDA", nullable=true)
 	private List<Inscrito> suspensoProximaPartida = new ArrayList<Inscrito>();
 	
 	@OneToMany
-	@Column(name="PARTIDAS", nullable=true)
 	private List<Partida> partidas = new ArrayList<Partida>();
 	
 	public long getNumeroInscricao() {

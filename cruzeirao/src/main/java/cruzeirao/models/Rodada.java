@@ -1,8 +1,6 @@
 package cruzeirao.models;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -28,7 +26,7 @@ public class Rodada {
 	private Grupo grupo;
 	
 	@Column(name="PARTIDAS", nullable=true)
-	private List<Partida> partidas = new ArrayList<Partida>();
+	private ArrayList<Partida> partidas = new ArrayList<Partida>();
 	
 	public int getNumero() {
 		return numero;
@@ -42,10 +40,10 @@ public class Rodada {
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
 	}
-	public List<Partida> getPartidas() {
+	public ArrayList<Partida> getPartidas() {
 		return partidas;
 	}
-	public void setPartidas(List<Partida> partidas) {
+	public void setPartidas(ArrayList<Partida> partidas) {
 		this.partidas = partidas;
 	}
 }

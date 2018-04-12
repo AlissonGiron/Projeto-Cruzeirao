@@ -1,6 +1,6 @@
 package cruzeirao.models;
 
-import java.util.Date;
+import java.util.Calendar;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -37,7 +37,7 @@ public abstract class Usuario {
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_NASCIMENTO", nullable=false)
-	private Date dataNascimento = new Date();
+	private Calendar dataNascimento;
 	
 	// Usando auto converter (F/M)
 	@Enumerated(EnumType.ORDINAL)
@@ -90,10 +90,10 @@ public abstract class Usuario {
 		this.apelidoCamiseta = apelidoCamiseta;
 	}
 	
-	public Date getDataNascimento() {
+	public Calendar getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	

@@ -2,8 +2,6 @@ package cruzeirao.models;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -11,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,13 +29,12 @@ public class Equipe {
 	@Column(name="CIDADE", nullable=false)
 	private String cidade;
 	
-	@Temporal(TemporalType.TIME)
+	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_FUNDACAO", nullable=false)
 	private Calendar dataFundacao;
 	
-	@OneToMany
-	@Column(name="DIRETORES", nullable=true)
-	private List<Diretor> diretores = new ArrayList<Diretor>();
+	@ManyToMany(mappedBy="equipes")
+	private ArrayList<Diretor> diretores = new ArrayList<Diretor>();
 	
 	public String getNome() {
 		return nome;
@@ -57,11 +54,10 @@ public class Equipe {
 	public void setDataFundacao(Calendar dataFundacao) {
 		this.dataFundacao = dataFundacao;
 	}
-	public List<Diretor> getDiretores() {
+	public ArrayList<Diretor> getDiretores() {
 		return diretores;
 	}
-	public void setDiretores(List<Diretor> diretores) {
+	public void setDiretores(ArrayList<Diretor> diretores) {
 		this.diretores = diretores;
 	}
 }
-

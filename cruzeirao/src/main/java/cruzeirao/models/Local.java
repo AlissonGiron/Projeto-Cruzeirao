@@ -82,4 +82,3 @@ public class Local {
 		this.numero = numero;
 	}	
 }
-

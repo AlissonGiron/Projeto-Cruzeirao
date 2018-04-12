@@ -2,8 +2,6 @@ package cruzeirao.models;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -28,7 +26,7 @@ public class Partida {
 	private int numeroPartida;
 	
 	@Column(name="EQUIPE_MANDANTE", nullable=false)
-	private Inscricao equipeMandante; 
+	private Inscricao equipeMandante;
 	
 	@Column(name="EQUIPE_VISITANTE", nullable=false)
 	private Inscricao equipeVisitante;
@@ -47,7 +45,7 @@ public class Partida {
     private String relatoJuiz;
 	
 	@Column(name="JUIZES", nullable=true)
-	private List<Juiz> juizes = new ArrayList<Juiz>();
+	private ArrayList<Juiz> juizes = new ArrayList<Juiz>();
 	
 	public int getNumeroPartida() {
 		return numeroPartida;
@@ -91,11 +89,10 @@ public class Partida {
 	public void setRelatoJuiz(String relatoJuiz) {
 		this.relatoJuiz = relatoJuiz;
 	}
-	public List<Juiz> getJuizes() {
+	public ArrayList<Juiz> getJuizes() {
 		return juizes;
 	}
-	public void setJuizes(List<Juiz> juizes) {
+	public void setJuizes(ArrayList<Juiz> juizes) {
 		this.juizes = juizes;
 	}
 }
-

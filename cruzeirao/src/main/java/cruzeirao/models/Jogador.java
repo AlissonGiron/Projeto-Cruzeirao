@@ -3,22 +3,19 @@ package cruzeirao.models;
 import java.util.ArrayList;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.PrimaryKeyJoinColumn;
-import cruzeirao.data.interfaces.IntegranteEquipe;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name="JOGADOR")
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
-public class Jogador extends Usuario implements IntegranteEquipe {
+public class Jogador extends Usuario {
 	
-	@OneToMany
-	@Column(name="INSCRICAO_EM_CAMPEONATOS", nullable=true)
-	private ArrayList<Inscrito> inscricaoEmCampeonatos;
+	@OneToMany(mappedBy="inscrito")
+	private ArrayList<Inscrito> inscricaoEmCampeonatos = new ArrayList<Inscrito>();
 
 	// GETS AND SETS
 	public ArrayList<Inscrito> getInscricaoEmCampeonatos() {
