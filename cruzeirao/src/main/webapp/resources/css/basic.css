@@ -244,3 +244,17 @@ tr.ui-widget-content
     background-color: black;
     padding: 20px;
 }
+
+.manageButton {
+	width: 50vw;
+    height: 100px;
+    background-color: lightgreen;
+    padding: 25px 20vw;
+    margin-left: 10px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-size: 35px;
+}
+

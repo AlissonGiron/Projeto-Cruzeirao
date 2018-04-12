@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<ui:composition template="../comuns/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
+	
+	<ui:define name="title">
+		<h:outputText value="Campeonato" />
+	</ui:define>
 
-</body>
-</html>
+	<ui:define name="principal">
+		
+		<div class="contentTitle"> Novo Grupo </div>
+		
+		<div class="pageContent">
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCampeonato">
+				</div>
+				
+				<p:panelGrid style="margin: 20px auto;" columns="2">					
+					
+					<p:outputLabel>Nome do Grupo:</p:outputLabel> 
+					<p:inputText></p:inputText>
+										
+					<p:outputLabel>Quantidade máxima de Equipes:</p:outputLabel>
+					<comp:numericInput min="0" step="1" />
+						
+				</p:panelGrid>
+			 </div>	
+			
+			<br></br>			
+			
+			<div class="listSection">
+				<div style="border: 1px solid grey; border-radius: 20px; padding: 20px; text-align: center;">
+					Para adicionar Equipes, primeiramente salve os dados básicos.
+				</div>
+			</div>
+			
+		   	<a href="edit.xhtml" class="buttonProvisorio">Salvar</a>
+		   	<div class="buttonProvisorioLine"></div>		   	
+		   	      	
+       	
+		</div>
+	</ui:define>
+
+	
+</ui:composition>
