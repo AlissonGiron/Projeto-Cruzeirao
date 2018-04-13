@@ -1,0 +1,115 @@
+<ui:composition template="../comuns/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
+	
+	<ui:define name="title">
+		<h:outputText value="Inscrição" />
+	</ui:define>
+
+	<ui:define name="principal">
+		
+		<div class="contentTitle"> Iniciar Inscrição </div>
+		
+		<div class="pageContent">
+			<br/>
+			<div class="itemCard">
+				<div class="cardTitle cardCampeonato">
+				</div>
+				
+				<p:panelGrid style="margin: 20px auto;" columns="5">	
+					EC São Bento
+					<comp:numericInput min="0" step="1"></comp:numericInput>
+					<div style="display: inline-block; border: 2px solid grey; border-radius: 10px; color: grey; padding: 20px; margin: 10px;">X</div>
+					<comp:numericInput min="0" step="1"></comp:numericInput>
+				    Xurupita FC
+					
+				</p:panelGrid>		
+				
+				<div style="margin: 0 auto; padding: 20px; width: 50vw; border-top: 3px solid indianred;">
+					<p style="text-align: center; font-weight: bold;">Gols</p>
+					
+					<p:panelGrid style="margin: 20px auto; border-bottom: 3px solid cadetblue;" columns="2">
+						<p>Xurupita FC - Alisson Henrique dos Santos Giron</p>
+						<p>20 minutos</p>					
+						<p:button value="Remover"></p:button>
+					</p:panelGrid>
+					
+					<br/>
+				</div>
+				
+					<br/>
+					<div style="text-align: center;">Adicionar Gol</div>
+					<p:panelGrid style="margin: 20px auto; border-top: 3px solid indianred;" columns="2">
+						Tempo de Jogo
+						<comp:numericInput></comp:numericInput>
+						Equipe	
+						<comp:comboBoxInput></comp:comboBoxInput>
+						Jogador
+						<comp:comboBoxInput></comp:comboBoxInput>
+						<p:button value="Adicionar Gol"></p:button>
+					</p:panelGrid>	
+				
+				
+					
+				<div style="margin: 0 auto; padding: 20px; width: 50vw; border-top: 3px solid indianred;">
+					<p style="text-align: center; font-weight: bold;">Cartões</p>
+					
+					<p:panelGrid style="margin: 20px auto; border-bottom: 3px solid cadetblue;" columns="2">
+						<p>Xurupita FC - Alisson Henrique dos Santos Giron</p>
+						<p>Amarelo - 20 minutos</p>					
+						<p:button value="Remover"></p:button>
+					</p:panelGrid>
+					
+					<br/>
+				</div>	
+				
+				
+					<br/>
+					<div style="text-align: center;">Adicionar Cartão</div>
+					<p:panelGrid style="margin: 20px auto; border-top: 3px solid indianred;" columns="2">
+						Tempo de Jogo
+						<comp:numericInput></comp:numericInput>
+						Equipe	
+						<comp:comboBoxInput></comp:comboBoxInput>
+						Jogador
+						<comp:comboBoxInput></comp:comboBoxInput>
+						Cartão
+						<comp:comboBoxInput></comp:comboBoxInput>
+						<p:button value="Adicionar Cartão"></p:button>
+					</p:panelGrid>	
+				
+				<div style="margin: 0 auto; padding: 20px; width: 50vw; border-top: 3px solid indianred;">
+					<p style="text-align: center; font-weight: bold;">Anotações do Juiz</p>
+					<p>Juiz: Guilherme</p>
+					
+					<input type="text" style="width: 100%;"></input>
+					
+					<br/>
+				</div>	
+					
+				</div>
+				
+				
+			
+			<br></br>
+			
+			
+			<br/>		   	
+		   	
+		   	<a href="selectPartida.xhtml" class="buttonProvisorio">Salvar</a>
+		   	<div class="buttonProvisorioLine"></div>		   	
+		   	
+		   	<div class="rodape"></div>	
+       	</div>
+	</ui:define>	
+</ui:composition>
+
+
+
+
+
