@@ -14,14 +14,23 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Jogador extends Usuario {
 	
-	@OneToMany(mappedBy="inscrito")
 	private ArrayList<Inscrito> inscricaoEmCampeonatos = new ArrayList<Inscrito>();
+	private ArrayList<Cartao> cartoes = new ArrayList<Cartao>();
 
 	// GETS AND SETS
+	@OneToMany(mappedBy="inscrito")
 	public ArrayList<Inscrito> getInscricaoEmCampeonatos() {
 		return inscricaoEmCampeonatos;
 	}
 	public void setInscricaoEmCampeonatos(ArrayList<Inscrito> inscricoes) {
 		this.inscricaoEmCampeonatos = inscricoes;
+	}
+	
+	@OneToMany(mappedBy="jogador")
+	public ArrayList<Cartao> getCartoes() {
+		return cartoes;
+	}
+	public void setCartoes(ArrayList<Cartao> cartoes) {
+		this.cartoes = cartoes;
 	}
 }

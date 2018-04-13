@@ -10,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -19,34 +21,41 @@ import cruzeirao.data.enums.TipoCartao;
 @Access(AccessType.PROPERTY)
 @Table(name="CARTAO")
 public class Cartao {
+	private int id;
+	private Jogador jogador;
+	private TipoCartao tipo;
+	private Calendar tempo;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID", nullable=false)
-	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
-	@Column(name="CARTOES_JOGADORES", nullable=false) 
-	private Jogador jogador;
-	
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name="TIPO_CARTAO", nullable=false)
-	private Enum<TipoCartao> tipo;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="TEMPO_DE_JOGO", nullable=false)
-	private Calendar tempo;
-	
+	@ManyToOne
+	@JoinColumn(name="ID_JOGADOR")
 	public Jogador getJogador() {
 		return jogador;
 	}
 	public void setJogador(Jogador jogador) {
 		this.jogador = jogador;
 	}
-	public Enum<TipoCartao> getTipo() {
+	
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name="TIPO_CARTAO", nullable=false)
+	public TipoCartao getTipo() {
 		return tipo;
 	}
-	public void setTipo(Enum<TipoCartao> tipo) {
+	public void setTipo(TipoCartao tipo) {
 		this.tipo = tipo;
 	}
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="TEMPO_DE_JOGO", nullable=false)
 	public Calendar getTempo() {
 		return tempo;
 	}

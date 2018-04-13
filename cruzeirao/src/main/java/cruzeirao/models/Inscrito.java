@@ -16,23 +16,10 @@ import javax.persistence.Table;
 @Access(AccessType.PROPERTY)
 @Table(name="INSCRITO")
 public class Inscrito {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID", nullable=false)
 	private int id;
-	
-	@Column(name="ACEITE_USUARIO")
 	private boolean aceiteUsuario;
-	
-	@Column(name="INSCRICAO_VALIDADA")
 	private boolean inscricaoValidada;
-	
-	@ManyToOne
-	@JoinColumn(name="ID")
 	private Usuario inscrito;
-	
-	@ManyToOne(cascade=CascadeType.PERSIST)
-	@JoinColumn(name="ID")
 	private Inscricao inscricao;
 
 	// CONSTRUCTOR
@@ -42,6 +29,9 @@ public class Inscrito {
 	}
 	
 	// GETS AND SETS
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID", nullable=false)
 	public int getId() {
 		return id;
 	}
@@ -49,6 +39,7 @@ public class Inscrito {
 		this.id = id;
 	}
 	
+	@Column(name="ACEITE_USUARIO")
 	public boolean isAceiteUsuario() {
 		return aceiteUsuario;
 	}
@@ -56,6 +47,7 @@ public class Inscrito {
 		this.aceiteUsuario = aceitaUsuario;
 	}
 	
+	@Column(name="INSCRICAO_VALIDADA")
 	public boolean isInscricaoValidada() {
 		return inscricaoValidada;
 	}
@@ -63,6 +55,8 @@ public class Inscrito {
 		this.inscricaoValidada = inscricaoValida;
 	}
 	
+	@ManyToOne
+	@JoinColumn(name="ID_INSCRITO")
 	public Usuario getInscrito() {
 		return inscrito;
 	}
@@ -70,6 +64,8 @@ public class Inscrito {
 		this.inscrito = inscrito;
 	}
 	
+	@ManyToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="ID_INSCRICAO")
 	public Inscricao getInscricao() {
 		return inscricao;
 	}

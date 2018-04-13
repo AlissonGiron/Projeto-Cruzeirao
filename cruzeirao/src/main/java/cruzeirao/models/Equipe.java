@@ -18,42 +18,48 @@ import javax.persistence.TemporalType;
 @Access(AccessType.PROPERTY)
 @Table(name="EQUIPE")
 public class Equipe {
+	private int id;
+	private String nome;
+	private String cidade;
+	private Calendar dataFundacao;
+	private ArrayList<Diretor> diretores = new ArrayList<Diretor>();
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID", nullable=false)
-	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	@Column(name="NOME", nullable=false)
-	private String nome;
-	
-	@Column(name="CIDADE", nullable=false)
-	private String cidade;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_FUNDACAO", nullable=false)
-	private Calendar dataFundacao;
-	
-	@ManyToMany(mappedBy="equipes")
-	private ArrayList<Diretor> diretores = new ArrayList<Diretor>();
-	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	@Column(name="CIDADE", nullable=false)
 	public String getCidade() {
 		return cidade;
 	}
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATA_FUNDACAO", nullable=false)
 	public Calendar getDataFundacao() {
 		return dataFundacao;
 	}
 	public void setDataFundacao(Calendar dataFundacao) {
 		this.dataFundacao = dataFundacao;
 	}
+	
+	@ManyToMany(mappedBy="equipes")
 	public ArrayList<Diretor> getDiretores() {
 		return diretores;
 	}

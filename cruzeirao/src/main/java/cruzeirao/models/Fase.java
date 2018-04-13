@@ -11,6 +11,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -21,62 +23,69 @@ import cruzeirao.data.enums.Formato;
 @Access(AccessType.PROPERTY)
 @Table(name="FASE")
 public class Fase {
+	private int id;
+	private Calendar dataInicio;
+	private Calendar dataFim;
+	private Formato formato;
+	private Categoria categoria;
+	private int numeroFase;
+	private ArrayList<Grupo> grupos = new ArrayList<Grupo>();
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID", nullable=false)
-	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_INICIO", nullable=false)
-	private Calendar dataInicio;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_FIM", nullable=false)
-	private Calendar dataFim;
-	
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name="TIPO_FORMATO", nullable=false)
-	private Enum<Formato> formato;
-	
-	@Column(name="CATEGORIA", nullable=false)
-	private Categoria categoria;
-	
-	@Column(name="NUMERO_FASE", nullable=false)
-	private int numeroFase;
-	
-	@OneToMany
-	private ArrayList<Grupo> grupos = new ArrayList<Grupo>();
-	
 	public Calendar getDataInicio() {
 		return dataInicio;
 	}
 	public void setDataInicio(Calendar dataInicio) {
 		this.dataInicio = dataInicio;
 	}
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATA_FIM", nullable=false)
 	public Calendar getDataFim() {
 		return dataFim;
 	}
 	public void setDataFim(Calendar dataFim) {
 		this.dataFim = dataFim;
 	}
-	public Enum<Formato> getFormato() {
+	
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name="TIPO_FORMATO", nullable=false)
+	public Formato getFormato() {
 		return formato;
 	}
-	public void setFormato(Enum<Formato> formato) {
+	public void setFormato(Formato formato) {
 		this.formato = formato;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name="ID_CATEGORIA")
 	public Categoria getCategoria() {
 		return categoria;
 	}
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+	
+	@Column(name="NUMERO_FASE", nullable=false)
 	public int getNumeroFase() {
 		return numeroFase;
 	}
 	public void setNumeroFase(int numeroFase) {
 		this.numeroFase = numeroFase;
 	}
+	
+	@OneToMany(mappedBy="fase")
 	public ArrayList<Grupo> getGrupos() {
 		return grupos;
 	}

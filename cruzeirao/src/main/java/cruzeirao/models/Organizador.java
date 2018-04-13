@@ -15,10 +15,10 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Organizador extends Usuario {
 	
-	@OneToMany
 	private List<Campeonato> campeonatos = new ArrayList<Campeonato>();
 	
 	// GETS AND SETS
+	@OneToMany
 	public List<Campeonato> getCampeonatos() {
 		return campeonatos;
 	}

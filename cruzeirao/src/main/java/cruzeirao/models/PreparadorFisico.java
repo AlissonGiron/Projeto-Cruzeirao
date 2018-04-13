@@ -15,7 +15,6 @@ import cruzeirao.data.enums.TipoDocumento;
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class PreparadorFisico extends Usuario {
 	
-	@OneToMany(mappedBy="inscrito")
 	private ArrayList<Inscrito> inscricaoEmCampeonatos;
 
 	public PreparadorFisico() {
@@ -29,10 +28,11 @@ public class PreparadorFisico extends Usuario {
 	 * Qualquer solução melhor falar com @RafaelSantana
 	 */
 	@Override
-	public void setTipoDocumento(Enum<TipoDocumento> tipoDocumento) {
+	public void setTipoDocumento(TipoDocumento tipoDocumento) {
 		
 	}
 	
+	@OneToMany(mappedBy="inscrito")
 	public ArrayList<Inscrito> getInscricaoEmCampeonatos() {
 		return inscricaoEmCampeonatos;
 	}

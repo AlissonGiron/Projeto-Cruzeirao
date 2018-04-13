@@ -16,11 +16,11 @@ import javax.persistence.JoinColumn;
 @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
 public class Diretor extends Usuario {
 	
-	@ManyToMany
-	@JoinTable(name="DIRETOR_EQUIPE", joinColumns=@JoinColumn(name="ID"), inverseJoinColumns=@JoinColumn(name="ID"))
 	private ArrayList<Equipe> equipes = new ArrayList<Equipe>();
 
 	// GETS AND SETS
+	@ManyToMany
+	@JoinTable(name="DIRETOR_EQUIPE", joinColumns=@JoinColumn(name="ID"), inverseJoinColumns=@JoinColumn(name="ID"))
 	public ArrayList<Equipe> getEquipes() {
 		return equipes;
 	}

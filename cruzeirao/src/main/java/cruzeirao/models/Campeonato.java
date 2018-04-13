@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -16,114 +17,112 @@ import java.util.Calendar;
 
 @Entity
 @Access(AccessType.PROPERTY)
-@Table(name="CAMPEONATO")
+@Table(name = "CAMPEONATO")
 public class Campeonato {
+	private int id;
+	private String nome;
+	private ArrayList<Local> locais = new ArrayList<Local>();
+	private ArrayList<Juiz> juizes = new ArrayList<Juiz>();
+	private ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+	private Calendar dataInicioInscricao;
+	private Calendar dataFimInscricao;
+	private Calendar dataInicioCampeonato;
+	private Calendar dataFimCampeonato;
+	private double valorTaxa;
+
+	// GETS AND SETS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID", nullable=false)
-	private int id;
-	
-	@Column(name="NOME", nullable=false)
-	private String nome;
-	
-	@OneToMany
-	@Column(name="LOCAIS", nullable=true)
-	private ArrayList<Local> locais = new ArrayList<Local>();
-	
-	@OneToMany
-	@Column(name="JUIZES", nullable=true)
-	private ArrayList<Juiz> juizes = new ArrayList<Juiz>();
-	
-	@OneToMany
-	@Column(name="CATEGORIAS", nullable=true)
-	private ArrayList<Categoria> categorias = new ArrayList<Categoria>();
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_INICIO_INSCRICAO", nullable=false)
-	private Calendar dataInicioInscricao;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_FIM_INSCRICAO", nullable=false)
-	private Calendar dataFimInscricao;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_INICIO_CAMPEONATO", nullable=false)
-	private Calendar dataInicioCampeonato;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_FIM_CAMPEONATO", nullable=false)
-	private Calendar dataFimCampeonato;
-	
-	@Column(name="VALOR_TAXA", nullable=false)
-	private double valorTaxa;
-	
-	// GETS AND SETS
+	@Column(name = "ID", nullable = false)
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
+	@Column(name = "NOME", nullable = false)
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
+	@ManyToMany(mappedBy = "campeonatos")
 	public ArrayList<Local> getLocais() {
 		return locais;
 	}
+
 	public void setLocais(ArrayList<Local> locais) {
 		this.locais = locais;
 	}
-	
+
+	@ManyToMany(mappedBy = "campeonatos")
 	public ArrayList<Juiz> getJuizes() {
 		return juizes;
 	}
+
 	public void setJuizes(ArrayList<Juiz> juizes) {
 		this.juizes = juizes;
 	}
-	
+
+	@OneToMany(mappedBy = "campeonato")
 	public ArrayList<Categoria> getCategorias() {
 		return categorias;
 	}
+
 	public void setCategorias(ArrayList<Categoria> categorias) {
 		this.categorias = categorias;
 	}
-	
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "DATA_INICIO_INSCRICAO", nullable = false)
 	public Calendar getDataInicioInscricao() {
 		return dataInicioInscricao;
 	}
+
 	public void setDataInicioInscricao(Calendar dataInicioInscricao) {
 		this.dataInicioInscricao = dataInicioInscricao;
 	}
-	
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "DATA_FIM_INSCRICAO", nullable = false)
 	public Calendar getDataFimInscricao() {
 		return dataFimInscricao;
 	}
+
 	public void setDataFimInscricao(Calendar dataFimInscricao) {
 		this.dataFimInscricao = dataFimInscricao;
 	}
-	
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "DATA_INICIO_CAMPEONATO", nullable = false)
 	public Calendar getDataInicioCampeonato() {
 		return dataInicioCampeonato;
 	}
+
 	public void setDataInicioCampeonato(Calendar dataInicioCampeonato) {
 		this.dataInicioCampeonato = dataInicioCampeonato;
 	}
-	
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "DATA_FIM_CAMPEONATO", nullable = false)
 	public Calendar getDataFimCampeonato() {
 		return dataFimCampeonato;
 	}
+
 	public void setDataFimCampeonato(Calendar dataFimCampeonato) {
 		this.dataFimCampeonato = dataFimCampeonato;
 	}
-	
+
+	@Column(name = "VALOR_TAXA", nullable = false)
 	public double getValorTaxa() {
 		return valorTaxa;
 	}
+
 	public void setValorTaxa(double valorTaxa) {
 		this.valorTaxa = valorTaxa;
 	}

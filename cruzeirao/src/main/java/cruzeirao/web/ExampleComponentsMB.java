@@ -7,6 +7,9 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 @ManagedBean
 @SessionScoped
@@ -31,6 +34,10 @@ public class ExampleComponentsMB {
 		comboBoxItems.add("Item 3");
 		
 		comboBoxSelectedItem = comboBoxItems.get(1);
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("cruzeirao");
+		EntityManager em = factory.createEntityManager();
+		em.createQuery("select J from Jogador J");
 	}
 
 	public List<String> getComboBoxItems() {

@@ -24,51 +24,24 @@ import cruzeirao.data.enums.Sexo;
 @Table(name="USUARIO")
 @Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Usuario {
+	
+	private int id;
+	private String nome;
+	private String apelidoCamiseta;
+	private Calendar dataNascimento;
+	private Sexo sexo;
+	private TipoDocumento tipoDocumento;
+	private String documento;
+	private String email;
+	private String telefone1;
+	private String telefone2;
+	private String endereco;
+	private byte[] foto;
+	
+	// GETS AND SETS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID", nullable=false)
-	private int id;
-	
-	@Column(name="NOME", nullable=false)
-	private String nome;
-	
-	@Column(name="APELIDO_CAMISETA", nullable=false)
-	private String apelidoCamiseta;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATA_NASCIMENTO", nullable=false)
-	private Calendar dataNascimento;
-	
-	// Usando auto converter (F/M)
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name="SEXO", nullable=false)
-	private Enum<Sexo> sexo;
-
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name="TIPO_DOCUMENTO", nullable=false)
-	private Enum<TipoDocumento> tipoDocumento;
-	
-	@Column(name="DOCUMENTO", nullable=false)
-	private String documento;
-	
-	@Column(name="EMAIL", nullable=true)
-	private String email;
-	
-	@Column(name="TELEFONE_1", nullable=false)
-	private String telefone1;
-	
-	@Column(name="TELEFONE_2", nullable=true)
-	private String telefone2;
-	
-	@Column(name="ENDERECO", nullable=false)
-	private String endereco;
-	
-	@Lob
-	@Column(name="FOTO", nullable=true)
-	private byte[] foto;
-	
-	
-	// GETS AND SETS
 	public int getId() {
 		return id;
 	}
@@ -76,6 +49,7 @@ public abstract class Usuario {
 		this.id = codigo;
 	}
 	
+	@Column(name="NOME", nullable=false)
 	public String getNome() {
 		return nome;
 	}
@@ -83,6 +57,7 @@ public abstract class Usuario {
 		this.nome = nome.trim();
 	}
 	
+	@Column(name="APELIDO_CAMISETA", nullable=false)
 	public String getApelidoCamiseta() {
 		return apelidoCamiseta;
 	}
@@ -90,6 +65,8 @@ public abstract class Usuario {
 		this.apelidoCamiseta = apelidoCamiseta;
 	}
 	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATA_NASCIMENTO", nullable=false)
 	public Calendar getDataNascimento() {
 		return dataNascimento;
 	}
@@ -97,20 +74,26 @@ public abstract class Usuario {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	public Enum<Sexo> getSexo() {
+	// Usando auto converter (F/M)
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name="SEXO", nullable=false)
+	public Sexo getSexo() {
 		return sexo;
 	}
-	public void setSexo(Enum<Sexo> sexo) {
+	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
 	}
 	
-	public Enum<TipoDocumento> getTipoDocumento() {
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name="TIPO_DOCUMENTO", nullable=false)
+	public TipoDocumento getTipoDocumento() {
 		return tipoDocumento;
 	}
-	public void setTipoDocumento(Enum<TipoDocumento> tipoDocumento) {
+	public void setTipoDocumento(TipoDocumento tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
 	}
 	
+	@Column(name="DOCUMENTO", nullable=false)
 	public String getDocumento() {
 		return documento;
 	}
@@ -118,6 +101,7 @@ public abstract class Usuario {
 		this.documento = documento.trim();
 	}
 	
+	@Column(name="EMAIL", nullable=true)
 	public String getEmail() {
 		return email;
 	}
@@ -125,6 +109,7 @@ public abstract class Usuario {
 		this.email = email.trim();
 	}
 	
+	@Column(name="TELEFONE_1", nullable=false)
 	public String getTelefone1() {
 		return telefone1;
 	}
@@ -132,6 +117,7 @@ public abstract class Usuario {
 		this.telefone1 = telefone1;
 	}
 	
+	@Column(name="TELEFONE_2", nullable=true)
 	public String getTelefone2() {
 		return telefone2;
 	}
@@ -139,6 +125,7 @@ public abstract class Usuario {
 		this.telefone2 = telefone2;
 	}
 	
+	@Column(name="ENDERECO", nullable=false)
 	public String getEndereco() {
 		return endereco;
 	}
@@ -146,6 +133,8 @@ public abstract class Usuario {
 		this.endereco = endereco.trim();
 	}
 	
+	@Lob
+	@Column(name="FOTO", nullable=true)
 	public byte[] getFoto() {
 		return foto;
 	}

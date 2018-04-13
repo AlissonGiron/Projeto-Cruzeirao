@@ -1,5 +1,6 @@
 package cruzeirao.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Access;
@@ -9,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,50 +19,58 @@ import javax.persistence.Table;
 @Access(AccessType.PROPERTY)
 @Table(name="GRUPO")
 public class Grupo {
+
+	private int id;
+	private String nome;
+	private Fase fase;
+	private int numeroEquipes;
+	private List<Rodada> rodadas = new ArrayList<Rodada>();
+	private List<Inscricao> equipes = new ArrayList<Inscricao>();
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID", nullable=false)
-	private int id;
-
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	@Column(name="NOME", nullable=false)
-	private String nome;
-	
-	@Column(name="FASE", nullable=false)
-	private Fase fase;
-	
-	@Column(name="NUMERO_EQUIPES", nullable=false)
-	private int numeroEquipes;
-	
-	@OneToMany
-	private List<Rodada> rodadas = new ArrayList<Rodada>();
-	
-	@OneToMany
-	private List<Inscricao> equipes = new ArrayList<Inscricao>();
-	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name="ID_FASE")
 	public Fase getFase() {
 		return fase;
 	}
 	public void setFase(Fase fase) {
 		this.fase = fase;
 	}
+	
+	@Column(name="NUMERO_EQUIPES", nullable=false)
 	public int getNumeroEquipes() {
 		return numeroEquipes;
 	}
 	public void setNumeroEquipes(int numeroEquipes) {
 		this.numeroEquipes = numeroEquipes;
 	}
+	
+	@OneToMany
 	public List<Rodada> getRodadas() {
 		return rodadas;
 	}
 	public void setRodadas(List<Rodada> rodadas) {
 		this.rodadas = rodadas;
 	}
+	
+	@OneToMany
 	public List<Inscricao> getEquipes() {
 		return equipes;
 	}
