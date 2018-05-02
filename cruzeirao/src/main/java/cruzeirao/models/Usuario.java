@@ -76,7 +76,7 @@ public abstract class Usuario {
 	
 	// Usando auto converter (F/M)
 	@Enumerated(EnumType.ORDINAL)
-	@Column(name="SEXO", nullable=false)
+	@Column(name="SEXO", nullable=false, length=1)
 	public Sexo getSexo() {
 		return sexo;
 	}
@@ -106,7 +106,9 @@ public abstract class Usuario {
 		return email;
 	}
 	public void setEmail(String email) {
-		this.email = email.trim();
+		if (email != null) {
+			this.email = email.trim();
+		}
 	}
 	
 	@Column(name="TELEFONE_1", nullable=false)

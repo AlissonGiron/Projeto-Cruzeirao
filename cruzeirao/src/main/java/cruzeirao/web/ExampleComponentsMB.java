@@ -11,6 +11,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import cruzeirao.data.enums.Sexo;
+import cruzeirao.data.enums.TipoDocumento;
+import cruzeirao.models.Jogador;
+
 @ManagedBean
 @SessionScoped
 public class ExampleComponentsMB {
@@ -37,7 +41,25 @@ public class ExampleComponentsMB {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("cruzeirao");
 		EntityManager em = factory.createEntityManager();
-		em.createQuery("select J from Jogador J");
+		List<Jogador> jogadores = em.createQuery("select J from Jogador J").getResultList();
+		
+		Jogador u = new Jogador();
+		u.setNome("Gui");
+		u.setApelidoCamiseta("Cravo");
+		Calendar c = Calendar.getInstance();
+		c.set(1997, 11, 21);
+		u.setDataNascimento(c);
+		u.setFoto(new byte[] { (byte) 255, (byte) 250, (byte) 147, (byte) 123, (byte) 186 });
+		u.setTipoDocumento(TipoDocumento.CERTIFICADO_RESERVISTA);
+		u.setDocumento("eai joia");
+		u.setSexo(Sexo.MASCULINO);
+		u.setEndereco("rua oi joia");
+		u.setTelefone1("555 0123");
+		
+		em.persist(u);
+		
+		em.getTransaction().begin();
+		em.getTransaction().commit();
 	}
 
 	public List<String> getComboBoxItems() {
