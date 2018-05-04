@@ -17,47 +17,28 @@
 		
 		<div class="pageContent">
 			<br/>
-			<div class="itemCard">
+			<h:form class="itemCard">
 				<div class="cardTitle cardCampeonato">
 				</div>
 				
 				<p:panelGrid style="margin: 20px auto;" columns="2">					
 					
 					<p:outputLabel>Nome do Campeonato:</p:outputLabel> 
-					<p:inputText></p:inputText>
-					
-					<p:outputLabel>Início das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
-					
-					<p:outputLabel>Término das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
-					
-					<p:outputLabel>Início do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
-					
-					<p:outputLabel>Término do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
-					
-					<p:outputLabel>Valor da Taxa:</p:outputLabel>
-					<comp:numericInput min="0" prefix="R$ " step="0.5" />
-						
+					<p:inputText value="#{campeonatoMB.campeonato.nome}"></p:inputText>
+				
+
 				</p:panelGrid>
-			 </div>	
+	   			<h:commandButton type="submit" action="#{campeonatoMB.create}" class="buttonProvisorio" >Adicionar Campeonato</h:commandButton>				
+			</h:form>	
+				
 			
 			<br></br>			
-			
+				
 			<div class="listSection">
 				<div style="border: 1px solid grey; border-radius: 20px; padding: 20px; text-align: center;">
 					Para adicionar Categorias, juízes e locais para um campeonato, primeiramente salve os dados básicos.
 				</div>
 			</div>
-			
-		   	<a href="edit.xhtml" class="buttonProvisorio">Salvar</a>
-		   	<div class="buttonProvisorioLine"></div>		   	
-		   	      	
-       	
 		</div>
 	</ui:define>
-
-	
 </ui:composition>

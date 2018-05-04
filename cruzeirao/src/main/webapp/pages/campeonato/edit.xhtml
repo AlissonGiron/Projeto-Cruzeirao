@@ -17,31 +17,33 @@
 		
 		<div class="pageContent">
 			<br/>
-			<div class="itemCard">
+			<h:form class="itemCard">
 				<div class="cardTitle cardCampeonato">
 				</div>
 				
 				<p:panelGrid style="margin: 20px auto;" columns="2">					
 					
 					<p:outputLabel>Nome do Campeonato:</p:outputLabel> 
-					<p:inputText></p:inputText>
-					
+					<p:inputText value="#{campeonatoMB.campeonato.nome}"></p:inputText>
+
 					<p:outputLabel>Início das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataInicioInscricao}" type="datetime"/>
 					
 					<p:outputLabel>Término das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataFimInscricao}" type="datetime"/>
 					
 					<p:outputLabel>Início do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataInicioCampeonato}"  type="datetime"/>
 					
 					<p:outputLabel>Término do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataFimCampeonato}" type="datetime"/>
 					
 					<p:outputLabel>Valor da Taxa:</p:outputLabel>
-					<comp:numericInput min="0" prefix="R$ " step="0.5" />
-										
-				</p:panelGrid>		
+					<comp:numericInput value="#{campeonatoMB.campeonato.valorTaxa}" min="0" prefix="R$ " step="0.5" />						
+
+				</p:panelGrid>
+	   			<h:commandButton type="submit" action="#{campeonatoMB.create}" class="buttonProvisorio" >Adicionar Campeonato</h:commandButton>				
+			</h:form>		
 			</div>
 			
 			<br></br>
@@ -61,9 +63,6 @@
 			</div>
 			
 			<br/>		   	
-		   	
-		   	<a href="index.xhtml" class="buttonProvisorio">Salvar</a>
-		   	<div class="buttonProvisorioLine"></div>		   	
 		   	
 		   	<div class="rodape"></div>	
        	</div>
