@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import cruzeirao.core.CampeonatoCore;
 import cruzeirao.models.Campeonato;
@@ -87,12 +88,15 @@ public class CampeonatoMB {
 	}
 	
 	public void edit() {
-		System.err.print(campeonato.getNome());
 		_core.edit(campeonato);
 	}
 	
-	public void delete(Campeonato campeonato) {
-		_core.delete(campeonato);
+	public void delete(Campeonato campeonatoDelete) {
+		if(campeonatoDelete == null) return;
+		
+		System.err.println(campeonatoDelete.getNome());
+		campeonatos.remove(campeonatoDelete);
+		_core.delete(campeonatoDelete);
 	}
 	
 	public void save() {
