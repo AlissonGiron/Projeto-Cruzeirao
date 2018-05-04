@@ -88,7 +88,13 @@ public class CampeonatoMB {
 	}
 	
 	public void edit() {
-		_core.edit(campeonato);
+		_core.edit(campeonato);		
+	}
+	
+	public String edit(int id) {
+		_core.edit(campeonato);		
+		campeonato.setNome("OI");
+		return "edit.xhtml";
 	}
 	
 	public void delete(Campeonato campeonatoDelete) {
