@@ -92,8 +92,7 @@ public class CampeonatoMB {
 	}
 	
 	public String edit(int id) {
-		_core.edit(campeonato);		
-		campeonato.setNome("OI");
+		campeonato =  _core.get(id);
 		return "edit.xhtml";
 	}
 	
