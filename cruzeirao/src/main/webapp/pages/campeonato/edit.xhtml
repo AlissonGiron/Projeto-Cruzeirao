@@ -25,7 +25,7 @@
 					
 					<p:outputLabel>Nome do Campeonato:</p:outputLabel> 
 					<p:inputText value="#{campeonatoMB.campeonato.nome}"></p:inputText>
-
+					
 					<p:outputLabel>Início das Inscrições:</p:outputLabel> 
 					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataInicioInscricao}" type="datetime"/>
 					
@@ -39,12 +39,12 @@
 					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataFimCampeonato}" type="datetime"/>
 					
 					<p:outputLabel>Valor da Taxa:</p:outputLabel>
-					<comp:numericInput value="#{campeonatoMB.campeonato.valorTaxa}" min="0" prefix="R$ " step="0.5" />						
+					<comp:numericInput value="#{campeonatoMB.campeonato.valorTaxa}" min="0" prefix="R$ " step="0.5" />
+				
 
 				</p:panelGrid>
-	   			<h:commandButton type="submit" action="#{campeonatoMB.create}" class="buttonProvisorio" >Adicionar Campeonato</h:commandButton>				
-			</h:form>		
-			</div>
+	   			<h:commandButton type="submit" action="#{campeonatoMB.edit}" class="buttonProvisorio" >Editar Campeonato</h:commandButton>				
+			</h:form>
 			
 			<br></br>
 			

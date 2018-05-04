@@ -83,11 +83,11 @@ public class CampeonatoMB {
 	}
 	
 	public void create() {		
-		System.err.println(campeonato.getNome());
 		_core.add(campeonato);
 	}
 	
-	public void edit(Campeonato campeonato) {
+	public void edit() {
+		System.err.print(campeonato.getNome());
 		_core.edit(campeonato);
 	}
 	
