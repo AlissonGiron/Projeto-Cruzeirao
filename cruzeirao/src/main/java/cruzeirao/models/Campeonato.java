@@ -12,8 +12,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -30,6 +34,13 @@ public class Campeonato {
 	private Calendar dataFimCampeonato;
 	private double valorTaxa;
 
+	public Campeonato() {
+		dataInicioInscricao = new GregorianCalendar();
+		dataFimInscricao = new GregorianCalendar();
+		dataInicioCampeonato = new GregorianCalendar();
+		dataFimCampeonato = new GregorianCalendar();
+	}
+	
 	// GETS AND SETS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -125,5 +136,41 @@ public class Campeonato {
 
 	public void setValorTaxa(double valorTaxa) {
 		this.valorTaxa = valorTaxa;
+	}
+
+	@Transient
+	public Date getDataInicioInscricaoT() {
+		return dataInicioInscricao.getTime();
+	}
+
+	public void setDataInicioInscricaoT(Date dataInicioInscricaoT) {
+		this.dataInicioInscricao.setTime(dataInicioInscricaoT);
+	}
+
+	@Transient
+	public Date getDataFimInscricaoT() {
+		return dataFimInscricao.getTime();
+	}
+
+	public void setDataFimInscricaoT(Date dataFimInscricaoT) {
+		this.dataFimInscricao.setTime(dataFimInscricaoT);
+	}
+
+	@Transient
+	public Date getDataInicioCampeonatoT() {
+		return dataInicioCampeonato.getTime();
+	}
+
+	public void setDataInicioCampeonatoT(Date dataInicioCampeonatoT) {
+		this.dataInicioCampeonato.setTime(dataInicioCampeonatoT);
+	}
+
+	@Transient
+	public Date getDataFimCampeonatoT() {
+		return dataFimCampeonato.getTime();
+	}
+
+	public void setDataFimCampeonatoT(Date dataFimCampeonatoT) {
+		this.dataFimCampeonato.setTime(dataFimCampeonatoT);
 	}
 }

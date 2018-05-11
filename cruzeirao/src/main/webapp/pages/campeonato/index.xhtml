@@ -18,13 +18,10 @@
 		   	<a href="create.xhtml" class="buttonProvisorio">Adicionar Campeonato</a>	   	
 			<br/>		
 		
-		    <ui:repeat value="#{campeonatoMB.campeonatos}" var="campeonato" varStatus="status">	
-		    	<h:form>		        	
+		    <ui:repeat value="#{campeonatoMB.campeonatos}" var="campeonato" varStatus="status">			        	
 		        	<div class="itemCard">
 						<div class="cardTitle cardCampeonato">
-							<h:commandLink styleClass="btnDelete" action="#{campeonatoMB.delete(campeonato)}" value="X">
-							</h:commandLink>	
-											
+							<p:button styleClass="btnDelete" value="X"></p:button>					
 							<p>
 					        	#{campeonato.nome}
 							</p>
@@ -60,11 +57,10 @@
 								
 								<br/>
 							</div>
-							<h:commandLink styleClass="btnView" value="Editar" action="#{campeonatoMB.edit(campeonato.id)}"></h:commandLink>
+							<p:button styleClass="btnView" value="Editar" href="edit.xhtml"></p:button>
 						</div>
 					</div> 
 					<br/>
-				</h:form>
 		    </ui:repeat>
 		   	<div class="rodape"></div>	
        	

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 public class RepositoryBase<T> implements Closeable {
 
@@ -21,28 +22,37 @@ public class RepositoryBase<T> implements Closeable {
 	}
 	
 	public T get(int id) {
-		return _em.getReference(_class, id);
+		T result = _em.getReference(_class, id);
+		commitChanges();
+		return result;
 	}
 	
 	public List<T> query(String query) {
-		return _em.createQuery(query).getResultList();
+		TypedQuery<T> tquery = _em.createQuery(query, _class);
+		commitChanges();
+		return tquery.getResultList();
 	}
 	
 	public void add(T entity) { 
 		_em.persist(entity);
+		
+		commitChanges();
 	}
 	
 	public void edit(T entity) {
 		if (!_em.contains(entity)) {
 			add(entity);
 		}
+		
+		commitChanges();
 	}
 	
 	public void delete(T entity) {
 		_em.remove(entity);
+		commitChanges();
 	}
 	
-	public void save() {
+	private void commitChanges() {
 		_em.getTransaction().begin();
 		_em.getTransaction().commit();
 	}

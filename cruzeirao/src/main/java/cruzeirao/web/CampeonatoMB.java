@@ -1,12 +1,9 @@
 package cruzeirao.web;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 import cruzeirao.core.CampeonatoCore;
 import cruzeirao.models.Campeonato;
@@ -28,6 +25,7 @@ public class CampeonatoMB {
 	}
 
 	public List<Campeonato> getCampeonatos() {
+		campeonatos = getAll();
 		return campeonatos;
 	}
 
@@ -47,8 +45,8 @@ public class CampeonatoMB {
 	}
 	
 	public List<Campeonato> getAll() {
-		//return _core.getAll();
-		
+		return _core.getAll();
+		/*
 		List<Campeonato> Campeonatos = new ArrayList<Campeonato>(); 
 		
 		for(int i = 0; i < 2; i++)
@@ -80,11 +78,15 @@ public class CampeonatoMB {
 			Campeonatos.add(LCampeonato);
 		}		
 		
-		return Campeonatos;
+		return Campeonatos;*/
 	}
 	
-	public void create() {		
+	public String create() {
 		_core.add(campeonato);
+		
+		campeonato = new Campeonato();
+		
+		return "index.xhtml";
 	}
 	
 	public void edit() {
@@ -102,10 +104,6 @@ public class CampeonatoMB {
 		System.err.println(campeonatoDelete.getNome());
 		campeonatos.remove(campeonatoDelete);
 		_core.delete(campeonatoDelete);
-	}
-	
-	public void save() {
-		_core.save();
 	}
 	
 	@Override

@@ -37,10 +37,6 @@ public class CampeonatoCore implements Closeable {
 		_repository.delete(campeonato);
 	}
 	
-	public void save() {
-		_repository.save();
-	}
-	
 	@Override
 	public void close() {
 		_repository.close();
