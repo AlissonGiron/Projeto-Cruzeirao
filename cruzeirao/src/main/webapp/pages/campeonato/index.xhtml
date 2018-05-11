@@ -21,7 +21,7 @@
 		    <ui:repeat value="#{campeonatoMB.campeonatos}" var="campeonato" varStatus="status">			        	
 		        	<div class="itemCard">
 						<div class="cardTitle cardCampeonato">
-							<p:button styleClass="btnDelete" value="X"></p:button>					
+							<p:button styleClass="btnDelete" value="X" href="#{campeonatoMB.delete(campeonato)}"></p:button>
 							<p>
 					        	#{campeonato.nome}
 							</p>

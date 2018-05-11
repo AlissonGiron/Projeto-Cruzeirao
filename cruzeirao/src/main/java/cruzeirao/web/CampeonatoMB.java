@@ -89,8 +89,10 @@ public class CampeonatoMB {
 		return "index.xhtml";
 	}
 	
-	public void edit() {
-		_core.edit(campeonato);		
+	public String edit() {
+		_core.edit(campeonato);
+		campeonato = new Campeonato();
+		return "index.xhtml";
 	}
 	
 	public String edit(int id) {
@@ -98,12 +100,13 @@ public class CampeonatoMB {
 		return "edit.xhtml";
 	}
 	
-	public void delete(Campeonato campeonatoDelete) {
-		if(campeonatoDelete == null) return;
+	public String delete(Campeonato campeonatoDelete) {
+		if(campeonatoDelete == null) return "index.xhtml";
 		
-		System.err.println(campeonatoDelete.getNome());
 		campeonatos.remove(campeonatoDelete);
 		_core.delete(campeonatoDelete);
+		
+		return "index.xhtml";
 	}
 	
 	@Override
