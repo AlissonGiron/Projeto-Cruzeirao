@@ -95,8 +95,8 @@ public class CampeonatoMB {
 		return "index.xhtml";
 	}
 	
-	public String edit(int id) {
-		campeonato =  _core.get(id);
+	public String edit(Campeonato campeonato) {
+		campeonato =  _core.get(campeonato.getId());
 		return "edit.xhtml";
 	}
 	
