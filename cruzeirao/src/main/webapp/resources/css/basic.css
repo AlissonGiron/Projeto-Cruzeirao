@@ -261,3 +261,15 @@ tr.ui-widget-content
 .ui-layout-unit-content.ui-widget-content {
     height: 100vh !important;
 }
+
+.btnCommandButton {
+	color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: lightgreen;
+    padding: 30px 100px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: "Segoe UI";
+    box-shadow: 1px 2px 5px 0px #777676;
+}
