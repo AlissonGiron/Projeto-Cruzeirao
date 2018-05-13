@@ -17,51 +17,53 @@
 		<div class="pageContent">
 		   	<a href="create.xhtml" class="buttonProvisorio">Adicionar Campeonato</a>	   	
 			<br/>		
-		
-		    <ui:repeat value="#{campeonatoMB.campeonatos}" var="campeonato" varStatus="status">			        	
-		        	<div class="itemCard">
-						<div class="cardTitle cardCampeonato">
-							<h:commandButton action="#{campeonatoMB.delete(campeonato)}">X</h:commandButton>
-							<p>
-					        	#{campeonato.nome}
-							</p>
-						</div>
-										
-						<div class="cardInfo">
-							<div style="width: 50%; display: inline-block">
-								<br/>
-								Período de Inscrições:
-								
-								<h:outputText value="#{campeonato.dataInicioInscricao.time}" >
-								    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
-								</h:outputText>
-								a
-								<h:outputText value="#{campeonato.dataFimInscricao.time}" >
-								    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
-								</h:outputText>
-								
-								<br/>
-								<br/>
-								
-								Período de Realização:
-								
-								<h:outputText value="#{campeonato.dataInicioCampeonato.time}" >
-								    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
-								</h:outputText>
-								a
-								<h:outputText value="#{campeonato.dataFimCampeonato.time}" >
-								    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
-								</h:outputText>
-								
-								<br/>
-								
-								<br/>
+			
+			<h:form>
+			    <ui:repeat value="#{campeonatoMB.campeonatos}" var="campeonato" varStatus="status">			        	
+			        	<div class="itemCard">
+							<div class="cardTitle cardCampeonato">
+								<h:commandButton type="submit" class="btnCommandButton btnCommandButtonDelete inline" action="#{campeonatoMB.delete(campeonato)}" value="X"></h:commandButton>
+								<p class="inline">
+						        	#{campeonato.nome}
+								</p>
 							</div>
-							<h:commandButton action="#{campeonatoMB.edit(campeonato)}">Editar</h:commandButton>
-						</div>
-					</div> 
-					<br/>
-		    </ui:repeat>
+											
+							<div class="cardInfo">
+								<div style="width: 50%; display: inline-block">
+									<br/>
+									Período de Inscrições:
+									
+									<h:outputText value="#{campeonato.dataInicioInscricao.time}" >
+									    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>
+									a
+									<h:outputText value="#{campeonato.dataFimInscricao.time}" >
+									    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>
+									
+									<br/>
+									<br/>
+									
+									Período de Realização:
+									
+									<h:outputText value="#{campeonato.dataInicioCampeonato.time}" >
+									    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>
+									a
+									<h:outputText value="#{campeonato.dataFimCampeonato.time}" >
+									    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+									</h:outputText>
+									
+									<br/>
+									
+									<br/>
+								</div>
+								<h:commandButton class="btnCommandButton btnCommandButtonEdit" action="#{campeonatoMB.edit(campeonato)}" value="Editar"></h:commandButton>
+							</div>
+						</div> 
+						<br/>
+			    </ui:repeat>
+		    </h:form>
 		   	<div class="rodape"></div>	
        	
 		</div>

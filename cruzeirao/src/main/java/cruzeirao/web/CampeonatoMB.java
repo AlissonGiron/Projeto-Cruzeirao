@@ -13,31 +13,31 @@ import cruzeirao.models.Campeonato;
 public class CampeonatoMB {
 	private CampeonatoCore _core;
 	
-	private List<Campeonato> campeonatos;
-	private Campeonato campeonato;
+	private List<Campeonato> _campeonatos;
+	private Campeonato _campeonato;
 	
 	public Campeonato getCampeonato() {
-		return campeonato;
+		return _campeonato;
 	}
 
 	public void setCampeonato(Campeonato campeonato) {
-		this.campeonato = campeonato;
+		_campeonato = campeonato;
 	}
 
 	public List<Campeonato> getCampeonatos() {
-		campeonatos = getAll();
-		return campeonatos;
+		_campeonatos = getAll();
+		return _campeonatos;
 	}
 
 	public void setCampeonatos(List<Campeonato> campeonatos) {
-		this.campeonatos = campeonatos;
+		this._campeonatos = campeonatos;
 	}
 	
 
 	public CampeonatoMB() {
 		_core = new CampeonatoCore();
-		campeonato = new Campeonato();
-		campeonatos = getAll();	
+		_campeonato = new Campeonato();
+		_campeonatos = getAll();	
 	}
 	
 	public Campeonato get(int id) {
@@ -82,28 +82,28 @@ public class CampeonatoMB {
 	}
 	
 	public String create() {
-		_core.add(campeonato);
+		_core.add(_campeonato);
 		
-		campeonato = new Campeonato();
+		_campeonato = new Campeonato();
 		
 		return "index.xhtml";
 	}
 	
 	public String edit() {
-		_core.edit(campeonato);
-		campeonato = new Campeonato();
+		_core.edit(_campeonato);
+		_campeonato = new Campeonato();
 		return "index.xhtml";
 	}
 	
 	public String edit(Campeonato campeonato) {
-		campeonato =  _core.get(campeonato.getId());
+		_campeonato =  campeonato;
 		return "edit.xhtml";
 	}
 	
 	public String delete(Campeonato campeonatoDelete) {
 		if(campeonatoDelete == null) return "index.xhtml";
 		
-		campeonatos.remove(campeonatoDelete);
+		_campeonatos.remove(campeonatoDelete);
 		_core.delete(campeonatoDelete);
 		
 		return "index.xhtml";
