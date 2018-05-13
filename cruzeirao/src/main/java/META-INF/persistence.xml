@@ -24,7 +24,7 @@
 		<class>cruzeirao.models.Partida</class>
 		<class>cruzeirao.models.PartidaFutebol</class>
 		<class>cruzeirao.models.Rodada</class>
-		<class>cruzeirao.data.converters.SexoConverter</class>
+		<!-- <class>cruzeirao.data.converters.SexoConverter</class> -->
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/CruzeiraoDB;create=true"/>
 			<property name="javax.persistence.jdbc.user" value="user"/>
