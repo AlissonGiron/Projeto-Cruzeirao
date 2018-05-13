@@ -75,7 +75,7 @@ public abstract class Usuario {
 	}
 	
 	// Usando auto converter (F/M)
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	@Column(name="SEXO", nullable=false, length=1)
 	public Sexo getSexo() {
 		return sexo;

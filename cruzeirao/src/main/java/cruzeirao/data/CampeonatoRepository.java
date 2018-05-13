@@ -7,5 +7,4 @@ public class CampeonatoRepository extends RepositoryBase<Campeonato> {
 	public CampeonatoRepository() {
 		super(Campeonato.class);
 	}
-
 }

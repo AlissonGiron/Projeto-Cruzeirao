@@ -1,20 +1,24 @@
 package cruzeirao.web;
 
 import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
 import cruzeirao.core.CampeonatoCore;
 import cruzeirao.models.Campeonato;
 
 @ManagedBean
 @SessionScoped
 public class CampeonatoMB {
-	private CampeonatoCore _core;
 	
+	private CampeonatoCore _core;
 	private List<Campeonato> _campeonatos;
 	private Campeonato _campeonato;
+	
+	public CampeonatoMB() {
+		_core = new CampeonatoCore();
+		_campeonato = new Campeonato();
+		_campeonatos = getAll();
+	}
 	
 	public Campeonato getCampeonato() {
 		return _campeonato;
@@ -31,13 +35,6 @@ public class CampeonatoMB {
 
 	public void setCampeonatos(List<Campeonato> campeonatos) {
 		this._campeonatos = campeonatos;
-	}
-	
-
-	public CampeonatoMB() {
-		_core = new CampeonatoCore();
-		_campeonato = new Campeonato();
-		_campeonatos = getAll();	
 	}
 	
 	public Campeonato get(int id) {

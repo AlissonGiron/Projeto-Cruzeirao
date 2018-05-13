@@ -2,7 +2,6 @@ package cruzeirao.core;
 
 import java.io.Closeable;
 import java.util.List;
-
 import cruzeirao.data.CampeonatoRepository;
 import cruzeirao.models.Campeonato;
 
