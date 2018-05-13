@@ -5,13 +5,12 @@ import cruzeirao.data.JogadorRepository;
 import cruzeirao.data.enums.Sexo;
 import cruzeirao.models.Jogador;
 
-public class JogadorMB
-		extends ManagedBeanBase<Jogador, JogadorRepository, JogadorCore> {
+public class JogadorMB extends ManagedBeanBase<Jogador, JogadorRepository, JogadorCore> {
 
 	public JogadorMB() {
 		super();
 	}
-	
+
 	public Sexo[] getSexo() {
 		return Sexo.values();
 	}

@@ -38,14 +38,14 @@
 					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataFimCampeonatoT}" type="datetime"/>
 					
 					<p:outputLabel>Valor da Taxa:</p:outputLabel>
-					<comp:numericInput value="#{campeonatoMB.campeonato.valorTaxa}" min="0" prefix="R$ " step="0.5" />
-	   			<h:commandButton type="submit" action="#{campeonatoMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar"></h:commandButton>				
+					<comp:numericInput value="#{campeonatoMB.campeonato.valorTaxa}" min="0.00" prefix="R$ " step="0.50" />
+	   			<h:commandButton type="submit" action="#{campeonatoMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar"></h:commandButton>
 				</p:panelGrid>
 
-			</h:form>	
+			</h:form>
 				
 			
-			<br></br>			
+			<br></br>
 				
 			<div class="listSection">
 				<div style="border: 1px solid grey; border-radius: 20px; padding: 20px; text-align: center;">

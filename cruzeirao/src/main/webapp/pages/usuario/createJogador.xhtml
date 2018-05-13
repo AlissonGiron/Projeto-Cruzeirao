@@ -23,63 +23,46 @@
 				    font-size: 35px;">
  			Cruzeirão
  		</div>
-		<div class="pageContent">
-			<br/>
-			<div class="itemCard">
-				<div class="cardTitle cardCategoria">
-				</div>
-				
-				<p:panelGrid style="margin: 20px auto;" columns="2">		
-					
-					<p:outputLabel>Nome:</p:outputLabel> 
-					<p:inputText value="#{JogadorMB.tipoGenerico.nome}"></p:inputText>
-					
-					<p:outputLabel>Email:</p:outputLabel> 
-					<p:inputText value="#{JogadorMB.tipoGenerico.email}"></p:inputText>
-					
-					<p:outputLabel>Endereço:</p:outputLabel> 
-					<p:inputText value="#{JogadorMB.tipoGenerico.endereco}"></p:inputText>
-					
-					<p:outputLabel>Telefone Fixo:</p:outputLabel> 
-					<p:inputText value="#{JogadorMB.tipoGenerico.telefone1}"></p:inputText>
-					
-					<p:outputLabel>Telefone Móvel:</p:outputLabel> 
-					<p:inputText value="#{JogadorMB.tipoGenerico.telefone2}"></p:inputText>
-					
-					<p:outputLabel>Documento:</p:outputLabel> 
-					<p:inputText value="#{JogadorMB.tipoGenerico.documento}"></p:inputText>
-					
-					<p:outputLabel>Data de Nascimento:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime" value="#{JogadorMB.tipoGenerico.dataNascimento}"/>
-					
-					<p:outputLabel>Sexo: </p:outputLabel> 
-					<p:selectOneButton value="#{JogadorMB.tipoGenerico.sexo}">
-						<f:selectItems value="#{JogadorMB.sexo}" var="s" itemValue="#{s}" itemLabel="#{s.label}" />
-					</p:selectOneButton>
 
+	<div class="pageContent">
+		<br />
+		<h:form class="itemCard">
+			<div class="cardTitle cardJogador"></div>
+
+			<p:panelGrid style="margin: 20px auto;" columns="2">
+
+				<p:outputLabel>Nome:</p:outputLabel>
+				<p:inputText value="#{JogadorMB.tipoGenerico.nome}"></p:inputText>
+
+				<p:outputLabel>E-mail:</p:outputLabel>
+				<p:inputText value="#{JogadorMB.tipoGenerico.email}"></p:inputText>
+
+				<p:outputLabel>Endereço:</p:outputLabel>
+				<p:inputText value="#{JogadorMB.tipoGenerico.endereco}"></p:inputText>
+
+				<p:outputLabel>Telefone Fixo:</p:outputLabel>
+				<p:inputText value="#{JogadorMB.tipoGenerico.telefone1}"></p:inputText>
+
+				<p:outputLabel>Telefone Móvel:</p:outputLabel>
+				<p:inputText value="#{JogadorMB.tipoGenerico.telefone2}"></p:inputText>
+
+				<p:outputLabel>Documento:</p:outputLabel>
+				<p:inputText value="#{JogadorMB.tipoGenerico.documento}"></p:inputText>
+
+				<p:outputLabel>Data de Nascimento:</p:outputLabel>
+				<comp:dateTimeInput type="date" value="#{JogadorMB.tipoGenerico.dataNascimento}" />
+
+				<p:outputLabel>Sexo: </p:outputLabel>
+				<comp:oneButtonInput values="#{JogadorMB.sexos}" currentValue="#{JogadorMB.tipoGenerico.sexo}" />
+
+				<h:commandButton type="submit" action="#{JogadorMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar">
+				</h:commandButton>
 			</p:panelGrid>
-			 </div>	
-			
-			<br></br>
-			
-			
-			<a href="../gerenciadorCampeonato/index.xhtml" style="width: 50vw;
-				    height: 100px;
-				    background-color: lightgreen;
-				    margin-left: 25vw;
-				    padding: 25px 20vw;
-				    text-decoration: none;
-				    text-align: center;
-				    border-radius: 20px;
-				    line-height: 100px;
-				    color: white;
-				    font-size: 35px;">
-	 			Registrar
-	 		</a>			
-			
-       	
-		</div>
- 	
-  
- </h:body>
+		</h:form>
+
+		<br></br>
+
+	</div>
+
+</h:body>
 </html>

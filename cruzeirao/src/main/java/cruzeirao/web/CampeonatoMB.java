@@ -1,3 +1,22 @@
+//package cruzeirao.web;
+//
+//import cruzeirao.core.CampeonatoCore;
+//import cruzeirao.data.CampeonatoRepository;
+//import cruzeirao.models.Campeonato;
+//
+//public class CampeonatoMB extends ManagedBeanBase<Campeonato, CampeonatoRepository, CampeonatoCore> {
+//
+//	@Override
+//	public Campeonato getNewInstanceOfT() {
+//		return new Campeonato();
+//	}
+//
+//	@Override
+//	public CampeonatoCore getNewInstanceOfC() {
+//		return new CampeonatoCore();
+//	}
+//}
+
 package cruzeirao.web;
 
 import java.util.List;
