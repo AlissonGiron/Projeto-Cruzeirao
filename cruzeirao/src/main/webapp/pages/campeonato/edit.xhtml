@@ -24,22 +24,22 @@
 				<p:panelGrid style="margin: 20px auto;" columns="2">					
 					
 					<p:outputLabel>Nome do Campeonato:</p:outputLabel> 
-					<p:inputText value="#{campeonatoMB.campeonato.nome}"></p:inputText>
+					<p:inputText value="#{campeonatoMB.tipoGenerico.nome}"></p:inputText>
 					
 					<p:outputLabel>Início das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataInicioInscricaoT}" type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataInicioInscricaoT}" type="datetime"/>
 					
 					<p:outputLabel>Término das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataFimInscricaoT}" type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataFimInscricaoT}" type="datetime"/>
 					
 					<p:outputLabel>Início do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataInicioCampeonatoT}"  type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataInicioCampeonatoT}"  type="datetime"/>
 					
 					<p:outputLabel>Término do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.campeonato.dataFimCampeonatoT}" type="datetime"/>
+					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataFimCampeonatoT}" type="datetime"/>
 					
 					<p:outputLabel>Valor da Taxa:</p:outputLabel>
-					<comp:numericInput value="#{campeonatoMB.campeonato.valorTaxa}" min="0" prefix="R$ " step="0.5" />
+					<comp:numericInput value="#{campeonatoMB.tipoGenerico.valorTaxa}" min="0.00" prefix="R$ " step="0.50" />
 				
 
 				</p:panelGrid>

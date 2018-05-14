@@ -19,7 +19,7 @@
 			<br/>		
 			
 			<h:form>
-			    <ui:repeat value="#{campeonatoMB.campeonatos}" var="campeonato" varStatus="status">			        	
+			    <ui:repeat value="#{campeonatoMB.tiposGenericos}" var="campeonato" varStatus="status">			        	
 			        	<div class="itemCard">
 							<div class="cardTitle cardCampeonato">
 								<h:commandButton type="submit" class="btnCommandButton btnCommandButtonDelete inline" action="#{campeonatoMB.delete(campeonato)}" value="X"></h:commandButton>

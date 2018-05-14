@@ -10,7 +10,7 @@ import cruzeirao.data.RepositoryBase;
 @SessionScoped
 public abstract class ManagedBeanBase <T, R extends RepositoryBase<T>, C extends CoreBase<T, R>> {
 	
-	private CoreBase<T, R> _core;
+	private C _core;
 	private List<T> _tiposGenericos;
 	private T _tipoGenerico;
 	
@@ -26,15 +26,16 @@ public abstract class ManagedBeanBase <T, R extends RepositoryBase<T>, C extends
 	public T getTipoGenerico() {
 		return _tipoGenerico;
 	}
-	public void setTipoGenerico(T _tipoGenerico) {
-		this._tipoGenerico = _tipoGenerico;
+	public void setTipoGenerico(T tipoGenerico) {
+		_tipoGenerico = tipoGenerico;
 	}
 	
 	public List<T> getTiposGenericos() {
+		_tiposGenericos = getAll();
 		return _tiposGenericos;
 	}
-	public void setTiposGenericos(List<T> _tiposGenericos) {
-		this._tiposGenericos = _tiposGenericos;
+	public void setTiposGenericos(List<T> tiposGenericos) {
+		_tiposGenericos = tiposGenericos;
 	}
 
 	public T get(int id) {

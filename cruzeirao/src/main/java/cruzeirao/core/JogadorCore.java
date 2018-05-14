@@ -6,6 +6,6 @@ import cruzeirao.models.Jogador;
 public class JogadorCore extends CoreBase<Jogador, JogadorRepository> {
 
 	public JogadorCore() {
-		super(new JogadorRepository());
+		super(new JogadorRepository(), "Jogador");
 	}
 }

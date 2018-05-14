@@ -6,9 +6,11 @@ import cruzeirao.data.RepositoryBase;
 
 public class CoreBase <T, R extends RepositoryBase<T>> implements Closeable {
 	private R _repository;
+	private String _tableName;
 	
-	public CoreBase(R myRepository) {
+	public CoreBase(R myRepository, String tableName) {
 		_repository = myRepository;
+		_tableName = tableName;
 	}
 	
 	public T get(int id) {
@@ -16,7 +18,7 @@ public class CoreBase <T, R extends RepositoryBase<T>> implements Closeable {
 	}
 	
 	public List<T> getAll() {
-		return _repository.query("Select c from " + _repository.getClass().getName() + " c");
+		return _repository.query("Select t from " + _tableName + " t");
 	}
 	
 	public List<T> query(String query) {
