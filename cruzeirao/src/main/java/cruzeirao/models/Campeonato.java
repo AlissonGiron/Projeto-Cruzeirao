@@ -1,5 +1,8 @@
 package cruzeirao.models;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -12,34 +15,34 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import java.beans.Transient;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table(name = "CAMPEONATO")
 public class Campeonato {
 	private int id;
+	@Size(min = 3, message = "O nome do campeonato deve ter no mínimo 3 caracteres")
 	private String nome;
 	private ArrayList<Local> locais = new ArrayList<Local>();
 	private ArrayList<Juiz> juizes = new ArrayList<Juiz>();
 	private ArrayList<Categoria> categorias = new ArrayList<Categoria>();
-	private Calendar dataInicioInscricao;
-	private Calendar dataFimInscricao;
-	private Calendar dataInicioCampeonato;
-	private Calendar dataFimCampeonato;
+	@NotNull(message = "A data de início das inscrições não pode ser vazia")
+	@FutureOrPresent(message = "A data início das inscrições não pode ser no passado")
+	private Date dataInicioInscricao;
+	@NotNull(message = "A data fim das inscrições não pode ser vazia")
+	@Future(message = "A data fim das inscrições deve ser no futuro")
+	private Date dataFimInscricao;
+	@NotNull(message = "A data de início das inscrições não pode ser vazia")
+	@Future(message = "A data de início do campeonato deve estar no futuro")
+	private Date dataInicioCampeonato;
+	@NotNull(message = "A data fim das inscrições não pode ser vazia")
+	@Future(message = "A data fim do campeonato deve estar no futuro")
+	private Date dataFimCampeonato;
 	private double valorTaxa;
-
-	public Campeonato() {
-		dataInicioInscricao = new GregorianCalendar();
-		dataFimInscricao = new GregorianCalendar();
-		dataInicioCampeonato = new GregorianCalendar();
-		dataFimCampeonato = new GregorianCalendar();
-	}
 	
 	// GETS AND SETS
 	@Id
@@ -91,41 +94,41 @@ public class Campeonato {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATA_INICIO_INSCRICAO", nullable = false)
-	public Calendar getDataInicioInscricao() {
+	public Date getDataInicioInscricao() {
 		return dataInicioInscricao;
 	}
 
-	public void setDataInicioInscricao(Calendar dataInicioInscricao) {
+	public void setDataInicioInscricao(Date dataInicioInscricao) {
 		this.dataInicioInscricao = dataInicioInscricao;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATA_FIM_INSCRICAO", nullable = false)
-	public Calendar getDataFimInscricao() {
+	public Date getDataFimInscricao() {
 		return dataFimInscricao;
 	}
 
-	public void setDataFimInscricao(Calendar dataFimInscricao) {
+	public void setDataFimInscricao(Date dataFimInscricao) {
 		this.dataFimInscricao = dataFimInscricao;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATA_INICIO_CAMPEONATO", nullable = false)
-	public Calendar getDataInicioCampeonato() {
+	public Date getDataInicioCampeonato() {
 		return dataInicioCampeonato;
 	}
 
-	public void setDataInicioCampeonato(Calendar dataInicioCampeonato) {
+	public void setDataInicioCampeonato(Date dataInicioCampeonato) {
 		this.dataInicioCampeonato = dataInicioCampeonato;
 	}
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATA_FIM_CAMPEONATO", nullable = false)
-	public Calendar getDataFimCampeonato() {
+	public Date getDataFimCampeonato() {
 		return dataFimCampeonato;
 	}
 
-	public void setDataFimCampeonato(Calendar dataFimCampeonato) {
+	public void setDataFimCampeonato(Date dataFimCampeonato) {
 		this.dataFimCampeonato = dataFimCampeonato;
 	}
 
@@ -136,41 +139,5 @@ public class Campeonato {
 
 	public void setValorTaxa(double valorTaxa) {
 		this.valorTaxa = valorTaxa;
-	}
-
-	@Transient
-	public Date getDataInicioInscricaoT() {
-		return dataInicioInscricao.getTime();
-	}
-
-	public void setDataInicioInscricaoT(Date dataInicioInscricaoT) {
-		this.dataInicioInscricao.setTime(dataInicioInscricaoT);
-	}
-
-	@Transient
-	public Date getDataFimInscricaoT() {
-		return dataFimInscricao.getTime();
-	}
-
-	public void setDataFimInscricaoT(Date dataFimInscricaoT) {
-		this.dataFimInscricao.setTime(dataFimInscricaoT);
-	}
-
-	@Transient
-	public Date getDataInicioCampeonatoT() {
-		return dataInicioCampeonato.getTime();
-	}
-
-	public void setDataInicioCampeonatoT(Date dataInicioCampeonatoT) {
-		this.dataInicioCampeonato.setTime(dataInicioCampeonatoT);
-	}
-
-	@Transient
-	public Date getDataFimCampeonatoT() {
-		return dataFimCampeonato.getTime();
-	}
-
-	public void setDataFimCampeonatoT(Date dataFimCampeonatoT) {
-		this.dataFimCampeonato.setTime(dataFimCampeonatoT);
 	}
 }

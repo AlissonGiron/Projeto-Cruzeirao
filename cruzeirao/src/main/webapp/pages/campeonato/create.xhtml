@@ -21,26 +21,27 @@
 				<div class="cardTitle cardCampeonato">
 				</div>
 				
-				<p:panelGrid style="margin: 20px auto;" columns="2">					
+				<p:messages closable="false" showDetail="false"/>
+				<p:panelGrid id="pGrid" style="margin: 20px auto;" columns="2">					
 					<p:outputLabel>Nome do Campeonato:</p:outputLabel> 
-					<p:inputText value="#{campeonatoMB.tipoGenerico.nome}"></p:inputText>
+					<p:inputText id="nomeCampeonato" value="#{campeonatoMB.tipoGenerico.nome}"></p:inputText>
 					
 					<p:outputLabel>Início das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataInicioInscricaoT}" type="datetime"/>
+					<comp:dateTimeInput id="dataInicioInscricao" value="#{campeonatoMB.tipoGenerico.dataInicioInscricao}" type="datetime"/>
 					
 					<p:outputLabel>Término das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataFimInscricaoT}" type="datetime"/>
+					<comp:dateTimeInput id="dataFimInscricao" value="#{campeonatoMB.tipoGenerico.dataFimInscricao}" type="datetime"/>
 					
 					<p:outputLabel>Início do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataInicioCampeonatoT}"  type="datetime"/>
+					<comp:dateTimeInput id="dataInicioCampeonato" value="#{campeonatoMB.tipoGenerico.dataInicioCampeonato}"  type="datetime"/>
 					
 					<p:outputLabel>Término do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput value="#{campeonatoMB.tipoGenerico.dataFimCampeonatoT}" type="datetime"/>
+					<comp:dateTimeInput id="dataFimCampeonato" value="#{campeonatoMB.tipoGenerico.dataFimCampeonato}" type="datetime"/>
 					
 					<p:outputLabel>Valor da Taxa:</p:outputLabel>
-					<comp:numericInput value="#{campeonatoMB.tipoGenerico.valorTaxa}" min="0.00" prefix="R$ " step="0.50" />
+					<comp:numericInput id="valorTaxa" value="#{campeonatoMB.tipoGenerico.valorTaxa}" min="0.00" prefix="R$ " step="0.50" />
 					
-	   			<h:commandButton type="submit" action="#{campeonatoMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar"></h:commandButton>
+	   				<h:commandButton type="submit" action="#{campeonatoMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar" update="pGrid"></h:commandButton>
 				</p:panelGrid>
 
 			</h:form>

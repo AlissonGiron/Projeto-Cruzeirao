@@ -40,5 +40,18 @@
 			<artifactId>org.eclipse.persistence.jpa</artifactId>
 			<version>2.6.2</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>2.0.0.Final</version>
+		</dependency>
+		
+		<!-- A quick note here is that hibernate-validator is entirely separate from the persistence aspects of Hibernate and by adding it as a dependency, we’re not adding these persistence aspects into the project. -->
+		<dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>6.0.10.Final</version>
+		</dependency>
 	</dependencies>
 </project>
