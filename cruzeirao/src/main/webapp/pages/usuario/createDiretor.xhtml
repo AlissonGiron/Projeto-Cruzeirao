@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:comp="http://java.sun.com/jsf/composite/components">
+ <h:head>
+ 	<h:outputStylesheet name="basic.css" library="css" />
+ </h:head>
+ <h:body style="margin: 0;">
+ 				
+ 		<div style="width: 80vw;
+				    height: 100px;
+				    background-color: lightgreen;
+				    margin-left: 10vw;
+				    text-align: center;
+				    border-bottom-left-radius: 50px;
+				    border-bottom-right-radius: 50px;
+				    line-height: 100px;
+				    color: white;
+				    font-size: 35px;">
+ 			Cruzeirão
+ 		</div>
+
+	<div class="pageContent">
+		<br />
+		<h:form class="itemCard">
+			<div class="cardTitle cardDiretor"></div>
+
+			<p:messages closable="false" showDetail="false"/>
+			<p:panelGrid style="margin: 20px auto;" columns="2">
+
+				<p:outputLabel>Nome:</p:outputLabel>
+				<p:inputText value="#{diretorMB.tipoGenerico.nome}"></p:inputText>
+
+				<p:outputLabel>E-mail:</p:outputLabel>
+				<p:inputText value="#{diretorMB.tipoGenerico.email}"></p:inputText>
+
+				<p:outputLabel>Endereço:</p:outputLabel>
+				<p:inputText value="#{diretorMB.tipoGenerico.endereco}"></p:inputText>
+
+				<p:outputLabel>Telefone Fixo:</p:outputLabel>
+				<p:inputText value="#{diretorMB.tipoGenerico.telefone1}"></p:inputText>
+
+				<p:outputLabel>Telefone Móvel:</p:outputLabel>
+				<p:inputText value="#{diretorMB.tipoGenerico.telefone2}"></p:inputText>
+
+				<p:outputLabel>Tipo de documento:</p:outputLabel>
+				<comp:oneButtonInput values="#{diretorMB.tiposDocumento}" currentValue="#{diretorMB.tipoGenerico.tipoDocumento}"/>
+				
+				<p:outputLabel>Documento:</p:outputLabel>
+				<p:inputText value="#{diretorMB.tipoGenerico.documento}"></p:inputText>
+
+				<p:outputLabel>Data de Nascimento:</p:outputLabel>
+				<comp:dateTimeInput type="date" value="#{diretorMB.tipoGenerico.dataNascimento}" />
+
+				<p:outputLabel>Sexo: </p:outputLabel>
+				<comp:oneButtonInput values="#{diretorMB.sexos}" currentValue="#{diretorMB.tipoGenerico.sexo}" />
+
+				<h:commandButton type="submit" action="#{diretorMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar">
+				</h:commandButton>
+			</p:panelGrid>
+		</h:form>
+
+		<br></br>
+
+	</div>
+
+</h:body>
+</html>
