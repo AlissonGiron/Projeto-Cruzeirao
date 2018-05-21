@@ -29,33 +29,37 @@
 		<h:form class="itemCard">
 			<div class="cardTitle cardJogador"></div>
 
+			<p:messages closable="false" showDetail="false"/>
 			<p:panelGrid style="margin: 20px auto;" columns="2">
 
 				<p:outputLabel>Nome:</p:outputLabel>
-				<p:inputText value="#{JogadorMB.tipoGenerico.nome}"></p:inputText>
+				<p:inputText value="#{jogadorMB.tipoGenerico.nome}"></p:inputText>
 
 				<p:outputLabel>E-mail:</p:outputLabel>
-				<p:inputText value="#{JogadorMB.tipoGenerico.email}"></p:inputText>
+				<p:inputText value="#{jogadorMB.tipoGenerico.email}"></p:inputText>
 
 				<p:outputLabel>Endereço:</p:outputLabel>
-				<p:inputText value="#{JogadorMB.tipoGenerico.endereco}"></p:inputText>
+				<p:inputText value="#{jogadorMB.tipoGenerico.endereco}"></p:inputText>
 
 				<p:outputLabel>Telefone Fixo:</p:outputLabel>
-				<p:inputText value="#{JogadorMB.tipoGenerico.telefone1}"></p:inputText>
+				<p:inputText value="#{jogadorMB.tipoGenerico.telefone1}"></p:inputText>
 
 				<p:outputLabel>Telefone Móvel:</p:outputLabel>
-				<p:inputText value="#{JogadorMB.tipoGenerico.telefone2}"></p:inputText>
+				<p:inputText value="#{jogadorMB.tipoGenerico.telefone2}"></p:inputText>
 
+				<p:outputLabel>Tipo de documento:</p:outputLabel>
+				<comp:oneButtonInput values="#{jogadorMB.tiposDocumento}" currentValue="#{jogadorMB.tipoGenerico.tipoDocumento}"/>
+				
 				<p:outputLabel>Documento:</p:outputLabel>
-				<p:inputText value="#{JogadorMB.tipoGenerico.documento}"></p:inputText>
+				<p:inputText value="#{jogadorMB.tipoGenerico.documento}"></p:inputText>
 
 				<p:outputLabel>Data de Nascimento:</p:outputLabel>
-				<comp:dateTimeInput type="date" value="#{JogadorMB.tipoGenerico.dataNascimento}" />
+				<comp:dateTimeInput type="date" value="#{jogadorMB.tipoGenerico.dataNascimento}" />
 
 				<p:outputLabel>Sexo: </p:outputLabel>
-				<comp:oneButtonInput values="#{JogadorMB.sexos}" currentValue="#{JogadorMB.tipoGenerico.sexo}" />
+				<comp:oneButtonInput values="#{jogadorMB.sexos}" currentValue="#{jogadorMB.tipoGenerico.sexo}" />
 
-				<h:commandButton type="submit" action="#{JogadorMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar">
+				<h:commandButton type="submit" action="#{jogadorMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar">
 				</h:commandButton>
 			</p:panelGrid>
 		</h:form>

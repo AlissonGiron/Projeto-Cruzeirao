@@ -1,6 +1,8 @@
 package cruzeirao.models;
 
 import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -16,6 +18,11 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 import cruzeirao.data.enums.TipoDocumento;
 import cruzeirao.data.enums.Sexo;
 
@@ -26,15 +33,24 @@ import cruzeirao.data.enums.Sexo;
 public abstract class Usuario {
 	
 	private int id;
+	@Size(min = 3, message = "O nome deve ter no mínimo 3 caracteres")
 	private String nome;
 	private String apelidoCamiseta;
-	private Calendar dataNascimento;
+	@NotNull(message = "Preencha a data de nascimento")
+	@Past(message = "A data de nascimento deve ser no passado")
+	private Date dataNascimento;
+	@NotNull(message = "Defina um sexo")
 	private Sexo sexo;
+	@NotNull(message = "Escolha um tipo de documento")
 	private TipoDocumento tipoDocumento;
+	@Size(min = 1, message = "Preencha o documento")
 	private String documento;
+	@Size(min = 1, message = "Digite um email")
+	@Email(message = "Digite um email válido")
 	private String email;
 	private String telefone1;
 	private String telefone2;
+	@Size(min = 1, message = "Digite um endereço")
 	private String endereco;
 	private byte[] foto;
 	
@@ -57,7 +73,7 @@ public abstract class Usuario {
 		this.nome = nome.trim();
 	}
 	
-	@Column(name="APELIDO_CAMISETA", nullable=false)
+	@Column(name="APELIDO_CAMISETA", nullable=true)
 	public String getApelidoCamiseta() {
 		return apelidoCamiseta;
 	}
@@ -67,16 +83,15 @@ public abstract class Usuario {
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA_NASCIMENTO", nullable=false)
-	public Calendar getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	// Usando auto converter (F/M)
 	@Enumerated(EnumType.STRING)
-	@Column(name="SEXO", nullable=false, length=1)
+	@Column(name="SEXO", nullable=false)
 	public Sexo getSexo() {
 		return sexo;
 	}

@@ -2,6 +2,7 @@ package cruzeirao.web;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
 import cruzeirao.core.CampeonatoCore;
 import cruzeirao.data.CampeonatoRepository;
 import cruzeirao.models.Campeonato;
