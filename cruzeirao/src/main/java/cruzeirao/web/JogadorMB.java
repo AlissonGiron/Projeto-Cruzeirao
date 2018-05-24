@@ -13,10 +13,6 @@ import cruzeirao.models.Jogador;
 @SessionScoped
 public class JogadorMB extends ManagedBeanBase<Jogador, JogadorRepository, JogadorCore> {
 
-	public JogadorMB() {
-		super();
-	}
-
 	public TipoDocumento[] getTiposDocumento() {
 		return TipoDocumento.values();
 	}
