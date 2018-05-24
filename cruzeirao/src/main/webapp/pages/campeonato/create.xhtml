@@ -17,7 +17,7 @@
 		
 		<div class="pageContent">
 			<br/>
-			<h:form class="itemCard">
+			<h:form class="itemCard" id="frm">
 				<div class="cardTitle cardCampeonato">
 				</div>
 				
@@ -27,16 +27,16 @@
 					<p:inputText id="nomeCampeonato" value="#{campeonatoMB.tipoGenerico.nome}"></p:inputText>
 					
 					<p:outputLabel>Início das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput id="dataInicioInscricao" value="#{campeonatoMB.tipoGenerico.dataInicioInscricao}" type="datetime"/>
+					<comp:dateTimeInput id="dataInicioInscricao" value="#{campeonatoMB.tipoGenerico.dataInicioInscricao}" type="date"/>
 					
 					<p:outputLabel>Término das Inscrições:</p:outputLabel> 
-					<comp:dateTimeInput id="dataFimInscricao" value="#{campeonatoMB.tipoGenerico.dataFimInscricao}" type="datetime"/>
+					<comp:dateTimeInput id="dataFimInscricao" value="#{campeonatoMB.tipoGenerico.dataFimInscricao}" type="date"/>
 					
 					<p:outputLabel>Início do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput id="dataInicioCampeonato" value="#{campeonatoMB.tipoGenerico.dataInicioCampeonato}"  type="datetime"/>
+					<comp:dateTimeInput id="dataInicioCampeonato" value="#{campeonatoMB.tipoGenerico.dataInicioCampeonato}"  type="date"/>
 					
 					<p:outputLabel>Término do Campeonato:</p:outputLabel> 
-					<comp:dateTimeInput id="dataFimCampeonato" value="#{campeonatoMB.tipoGenerico.dataFimCampeonato}" type="datetime"/>
+					<comp:dateTimeInput id="dataFimCampeonato" value="#{campeonatoMB.tipoGenerico.dataFimCampeonato}" type="date"/>
 					
 					<p:outputLabel>Valor da Taxa:</p:outputLabel>
 					<comp:numericInput id="valorTaxa" value="#{campeonatoMB.tipoGenerico.valorTaxa}" min="0.00" prefix="R$ " step="0.50" />

@@ -46,7 +46,13 @@ public abstract class ManagedBeanBase <T, R extends RepositoryBase<T>, C extends
 		return _core.getAll();
 	}
 	
+	public abstract Boolean validate(T tipoGenerico);
+	
 	public String create() {
+		if (!validate(_tipoGenerico)) {
+			return "create.xhtml";
+		}
+		
 		_core.add(_tipoGenerico);
 		_tipoGenerico = getNewInstanceOfT();
 		return "index.xhtml";
