@@ -25,4 +25,12 @@ public class MassagistaMB extends ManagedBeanBase<Massagista, MassagistaReposito
 	public MassagistaCore getNewInstanceOfC() {
 		return new MassagistaCore();
 	}
+
+	@Override
+	public Boolean validate(Massagista tipoGenerico) {
+		if(getTipoGenerico().getNome().isEmpty())//retorna falso se o nome do massagista for nulo
+			return false;
+		
+		return true;
+	}
 }

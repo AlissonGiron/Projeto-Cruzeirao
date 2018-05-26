@@ -28,6 +28,17 @@ public class CampeonatoMB extends ManagedBeanBase<Campeonato, CampeonatoReposito
 	public CampeonatoCore getNewInstanceOfC() {
 		return new CampeonatoCore();
 	}
+
+	@Override
+	public Boolean validate(Campeonato tipoGenerico) {
+		if(getTipoGenerico().getDataInicioCampeonato().getTime() > getTipoGenerico().getDataFimInscricao().getTime()) //retorna falso se a data de inicio for maior que a data final do campeonato
+			return false;
+		
+		if(getTipoGenerico().getNome().isEmpty())//retorna falso de nao houver nome do campeonato
+			return false;
+		
+		return true;
+	}
 }
 
 //package cruzeirao.web;

@@ -30,4 +30,9 @@ public class JogadorMB extends ManagedBeanBase<Jogador, JogadorRepository, Jogad
 	public JogadorCore getNewInstanceOfC() {
 		return new JogadorCore();
 	}
+
+	@Override
+	public Boolean validate(Jogador tipoGenerico) {
+		return true;
+	}
 }

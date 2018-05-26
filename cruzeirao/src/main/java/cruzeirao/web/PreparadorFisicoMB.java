@@ -25,4 +25,12 @@ public class PreparadorFisicoMB extends ManagedBeanBase<PreparadorFisico, Prepar
 	public PreparadorFisicoCore getNewInstanceOfC() {
 		return new PreparadorFisicoCore();
 	}
+
+	@Override
+	public Boolean validate(PreparadorFisico tipoGenerico) {
+		if(getTipoGenerico().getNome().isEmpty())//retorna falso se o nome do preparador fisico for nulo
+			return false;
+		
+		return true;
+	}
 }

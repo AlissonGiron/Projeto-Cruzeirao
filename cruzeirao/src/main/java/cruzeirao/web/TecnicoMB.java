@@ -25,4 +25,12 @@ public class TecnicoMB extends ManagedBeanBase<Tecnico, TecnicoRepository, Tecni
 	public TecnicoCore getNewInstanceOfC() {
 		return new TecnicoCore();
 	}
+
+	@Override
+	public Boolean validate(Tecnico tipoGenerico) {
+		if(getTipoGenerico().getNome().isEmpty())//retorna falso se o nome do tecnico for nulo
+			return false;
+		
+		return true;
+	}
 }

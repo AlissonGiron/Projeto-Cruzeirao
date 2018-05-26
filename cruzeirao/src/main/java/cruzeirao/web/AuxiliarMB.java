@@ -25,4 +25,12 @@ public class AuxiliarMB extends ManagedBeanBase<Auxiliar, AuxiliarRepository, Au
 	public AuxiliarCore getNewInstanceOfC() {
 		return new AuxiliarCore();
 	}
+
+	@Override
+	public Boolean validate(Auxiliar tipoGenerico) {
+		if(getTipoGenerico().getNome().isEmpty())//retorna falso se o nome do auxiliar for nulo
+			return false;
+		
+		return true;
+	}
 }

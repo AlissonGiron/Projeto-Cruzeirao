@@ -25,4 +25,15 @@ public class JuizMB extends ManagedBeanBase<Juiz, JuizRepository, JuizCore> {
 	public JuizCore getNewInstanceOfC() {
 		return new JuizCore();
 	}
+
+	@Override
+	public Boolean validate(Juiz tipoGenerico) {
+		if(getTipoGenerico().getPartidas().add(null))
+		   return false;
+		
+		if(getTipoGenerico().getNome().isEmpty())//retorna falso se o nome do juiz for nulo
+			return false;
+			
+		return true;
+	}
 }
