@@ -28,9 +28,10 @@ public class TecnicoMB extends ManagedBeanBase<Tecnico, TecnicoRepository, Tecni
 
 	@Override
 	public Boolean validate(Tecnico tipoGenerico) {
-		if(getTipoGenerico().getNome().isEmpty())//retorna falso se o nome do tecnico for nulo
+		if(getTipoGenerico().getNome().isEmpty()) //retorna falso se o nome do tecnico for nulo
 			return false;
 		
 		return true;
 	}
+	
 }

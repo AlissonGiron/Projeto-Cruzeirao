@@ -33,4 +33,5 @@ public class MassagistaMB extends ManagedBeanBase<Massagista, MassagistaReposito
 		
 		return true;
 	}
+	
 }

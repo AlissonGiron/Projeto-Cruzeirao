@@ -34,4 +34,5 @@ public class DiretorMB extends ManagedBeanBase<Diretor, DiretorRepository, Diret
 		
 		return true;
 	}
+	
 }

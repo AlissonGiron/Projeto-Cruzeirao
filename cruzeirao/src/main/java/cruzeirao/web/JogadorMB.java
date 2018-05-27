@@ -35,4 +35,5 @@ public class JogadorMB extends ManagedBeanBase<Jogador, JogadorRepository, Jogad
 	public Boolean validate(Jogador tipoGenerico) {
 		return true;
 	}
+	
 }

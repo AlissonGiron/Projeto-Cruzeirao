@@ -36,4 +36,5 @@ public class JuizMB extends ManagedBeanBase<Juiz, JuizRepository, JuizCore> {
 			
 		return true;
 	}
+	
 }

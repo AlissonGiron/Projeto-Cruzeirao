@@ -33,4 +33,5 @@ public class OrganizadorMB extends ManagedBeanBase<Organizador, OrganizadorRepos
 		
 		return true;
 	}
+	
 }

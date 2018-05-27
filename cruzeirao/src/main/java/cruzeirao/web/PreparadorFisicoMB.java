@@ -33,4 +33,5 @@ public class PreparadorFisicoMB extends ManagedBeanBase<PreparadorFisico, Prepar
 		
 		return true;
 	}
+	
 }
