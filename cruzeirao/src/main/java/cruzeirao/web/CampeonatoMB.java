@@ -39,6 +39,7 @@ public class CampeonatoMB extends ManagedBeanBase<Campeonato, CampeonatoReposito
 		
 		return true;
 	}
+
 }
 
 //package cruzeirao.web;
