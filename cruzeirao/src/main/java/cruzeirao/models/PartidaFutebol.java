@@ -52,5 +52,19 @@ public class PartidaFutebol extends Partida {
 		this.cartoesVisitante = cartoesVisitante;
 	}
 	
+	public boolean foraProximoJogo(Jogador jogador) {
+		
+		if(jogador.getCartoes() == "VERMELHO")
+			return true; //jogador fora do proximo jogo
+		return false;
+	}
+	
+	public boolean penaltis() //Se houver empate no tempo regulamentar, a decisão será feita na cobrança de pênaltis
+	{
+		if(golMandantes == golVisitantes)
+			return true;
+		
+		return false;
+	}
 }
 
