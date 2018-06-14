@@ -17,33 +17,28 @@
 		
 		<div class="pageContent">
 			<br/>
-			<div class="itemCard">
-				<div class="cardTitle cardCategoria">
+			<h:form class="itemCard" id="frm">
+				<div class="cardTitle cardCampeonato">
 				</div>
 				
-				<p:panelGrid style="margin: 20px auto;" columns="2">					
+				<p:messages closable="false" showDetail="false"/>
+				<p:panelGrid id="pGrid" style="margin: 20px auto;" columns="2">					
+					<p:outputLabel>Nome do Campeonato:</p:outputLabel> 
+					<p:inputText id="nomeEquipe" value="#{equipeMB.tipoGenerico.nome}"></p:inputText>
 					
-					<p:outputLabel>Nome da Equipe:</p:outputLabel> 
-					<p:inputText></p:inputText>
-					
-					<p:outputLabel>Data de Fundação:</p:outputLabel> 
-					<comp:dateTimeInput type="datetime"/>
+					<p:outputLabel>Data da Fundação:</p:outputLabel> 
+					<comp:dateTimeInput id="dataFundacaoEquipe" value="#{equipeMB.tipoGenerico.dataFundacao}" type="date"/>
 					
 					<p:outputLabel>Cidade:</p:outputLabel> 
-					<p:inputText></p:inputText>	
-						
+					<p:inputText id="nomeCidade" value="#{equipeMB.tipoGenerico.cidade}"></p:inputText>
+					
+	   				<h:commandButton type="submit" action="#{equipeMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar" update="pGrid"></h:commandButton>
 				</p:panelGrid>
-			 </div>	
+
+			</h:form>
+				
 			
-			<br></br>			
-						  
-			<br/>		   	
-		   	
-		   	<a href="index.xhtml" class="buttonProvisorio">Salvar</a>
-		   	<div class="buttonProvisorioLine"></div>		   	
-		   	
-		   	<div class="rodape"></div>	
-       	
+			<br></br>		      	
        	
 		</div>
 	</ui:define>

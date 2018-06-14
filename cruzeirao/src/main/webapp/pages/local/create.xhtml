@@ -16,33 +16,34 @@
 		
 		<div class="pageContent">
 			<br/>
-			<div class="itemCard">
-				<div class="cardTitle cardCategoria"></div>
+			<h:form class="itemCard" id="frm">
+				<div class="cardTitle cardCampeonato">
+				</div>
 				
-				<p:panelGrid style="margin: 20px auto;" columns="2">
+				<p:messages closable="false" showDetail="false"/>
+				<p:panelGrid id="pGrid" style="margin: 20px auto;" columns="2">					
 					<p:outputLabel>Nome do Local:</p:outputLabel> 
-					<p:inputText></p:inputText>
+					<p:inputText id="nomeLocal" value="#{localMB.tipoGenerico.nome}"></p:inputText>
 					
 					<p:outputLabel>Rua/Numero:</p:outputLabel> 
-					<p:inputText></p:inputText>
-					
+					<p:inputText id="nomeEndereco" value="#{localMB.tipoGenerico.endereco}"></p:inputText>					
+
 					<p:outputLabel>Bairro:</p:outputLabel> 
-					<p:inputText></p:inputText>
+					<p:inputText id="nomeBairro" value="#{localMB.tipoGenerico.bairro}"></p:inputText>
 					
-					<p:outputLabel>Cidade:</p:outputLabel> 
-					<p:inputText></p:inputText>
+					<p:outputLabel>Cidade:</p:outputLabel>
+					<p:inputText id="nomeCidade" value="#{localMB.tipoGenerico.cidade}"></p:inputText>
 					
-					<p:outputLabel>CEP: </p:outputLabel> 
-					<p:inputText></p:inputText>
+					<p:outputLabel>CEP: </p:outputLabel>
+					<p:inputText id="Cep" value="#{localMB.tipoGenerico.CEP}"></p:inputText>
 					
-					<p:outputLabel>Telefone:</p:outputLabel> 
-					<p:inputText></p:inputText>
-						
+					<p:outputLabel>Telefone:</p:outputLabel>
+					<p:inputText id="telefone" value="#{localMB.tipoGenerico.telefone}"></p:inputText>
+					
+	   				<h:commandButton type="submit" action="#{localMB.create}" class="btnCommandButton btnCommandButtonSave" value="Salvar" update="pGrid"></h:commandButton>
 				</p:panelGrid>
-			 </div>				
-		   	
-		   	<a href="index.xhtml" class="buttonProvisorio">Salvar</a>
-		   	<div class="buttonProvisorioLine"></div>
+
+			</h:form>
 		</div>
 	</ui:define>
 

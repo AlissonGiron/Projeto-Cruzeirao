@@ -16,25 +16,47 @@
 		
 		<div class="pageContent">
 			<br/>
-			<div class="itemCard">
-				<div class="cardTitle cardCampeonato">
-					<p:button styleClass="btnDelete" value="X"></p:button>					
-					<p>EC São Bento</p>
-				</div>
-				
-				<div class="cardInfo">
-					<div style="width: 50%; display: inline-block">
-						<p>Cidade: Sorocaba</p>					
-						<p>Data de Fundação: 14 de setembro de 1913</p>
-					</div>
-					<p:button styleClass="btnView" value="Editar" href="edit.xhtml"></p:button>
-				</div>
-			</div>
-			<br/>				   
-			   
 		   	<a href="create.xhtml" class="buttonProvisorio">Adicionar Equipe</a>
 		   	<div class="buttonProvisorioLine"></div>
 		   	
+		   	
+		   		<h:form>
+			    <ui:repeat value="#{equipeMB.tiposGenericos}" var="equipe" varStatus="status">			        	
+			        	<div class="itemCard">
+							<div class="cardTitle cardCampeonato">
+								<h:commandButton type="submit" class="btnCommandButton btnCommandButtonDelete inline" action="#{campeonatoMB.delete(campeonato)}" value="X"></h:commandButton>
+								<p class="inline">
+						        	#{equipe.nome}
+								</p>
+							</div>
+											
+							<div class="cardInfo">
+								<div style="width: 95%; display: inline-block">
+									<br/>
+									Cidade:
+									
+									<h:outputText value="#{equipe.cidade}" >
+									</h:outputText>
+									
+									<br/>
+									<br/>
+									
+									Data de Fundação:
+									
+									<h:outputText value="#{equipe.dataFundacao}" >
+									    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="America/Sao_Paulo"/>
+									</h:outputText>
+									
+									<br/>
+									
+									<br/>
+								</div>
+								<h:commandButton class="btnCommandButton btnCommandButtonEdit" action="#{equipeMB.edit(equipe)}" value="Editar"></h:commandButton>
+							</div>
+						</div> 
+						<br/>
+			    </ui:repeat>
+		    </h:form>
 		   	
 		   	<div class="rodape"></div>	
        	
