@@ -8,6 +8,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import cruzeirao.data.enums.TipoCartao;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -54,8 +55,12 @@ public class PartidaFutebol extends Partida {
 	
 	public boolean foraProximoJogo(Jogador jogador) {
 		
-		if(jogador.getCartoes() == "VERMELHO")
-			return true; //jogador fora do proximo jogo
+		if(jogador.getCartoes().stream().anyMatch(c -> c.getTipo().equals(TipoCartao.VERMELHO)))
+			return true; // fora e expulso por cartão vermelho
+		if(jogador.getCartoes().stream().filter(c -> c.getTipo().equals(TipoCartao.AMARELO)).count() == 3) {
+			return true; // fora por 3 cartões amarelos acumulados (2 num só jogo já expulsa)
+		}
+		
 		return false;
 	}
 	
